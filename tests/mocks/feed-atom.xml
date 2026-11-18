@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>VentureBeat AI (Atom)</title>
+  <link rel="self" href="https://venturebeat.com/category/ai/feed/"/>
+  <entry>
+    <title>Enterprise AI adoption accelerates in 2025</title>
+    <link rel="alternate" type="text/html" href="https://venturebeat.com/2025/06/09/enterprise-ai"/>
+    <id>urn:uuid:entry-1</id>
+    <published>2025-06-09T08:00:00Z</published>
+    <updated>2025-06-09T08:00:00Z</updated>
+    <summary>Companies are rolling out LLM tools across their departments.</summary>
+  </entry>
+  <entry>
+    <title>AI-powered search engine wins big contract</title>
+    <link rel="alternate" type="text/html" href="https://venturebeat.com/2025/06/08/ai-search"/>
+    <id>urn:uuid:entry-2</id>
+    <published>2025-06-08T17:00:00Z</published>
+    <updated>2025-06-08T17:00:00Z</updated>
+    <summary>The contract is worth an estimated $100 million.</summary>
+    <media:thumbnail url="https://venturebeat.com/img/search.jpg" width="1200" height="630"/>
+  </entry>
+</feed>
