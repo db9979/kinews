@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Zeit Welt</title>
+    <link>https://www.zeit.de/welt</link>
+    <item>
+      <title>Bündnis für erneuerbare Energien wird unterzeichnet</title>
+      <link>https://www.zeit.de/welt/2025-06/ernaeruerbare-buendnis</link>
+      <guid isPermaLink="true">https://www.zeit.de/welt/2025-06/ernaeruerbare-buendnis</guid>
+      <pubDate>Mon, 09 Jun 2025 09:15:00 +0000</pubDate>
+      <description>Ein Dutzend Staaten verpflichtet sich zu verbindlichen Klimazielen.</description>
+    </item>
+    <item>
+      <title>Wasserverhandlungen im Nahen Osten kommen voran</title>
+      <link>https://www.zeit.de/welt/2025-06/wasserverhandlungen</link>
+      <guid isPermaLink="true">https://www.zeit.de/welt/2025-06/wasserverhandlungen</guid>
+      <pubDate>Sun, 08 Jun 2025 16:40:00 +0000</pubDate>
+      <description>Die Delegationen einigen sich auf ein Rahmenabkommen.</description>
+    </item>
+  </channel>
+</rss>

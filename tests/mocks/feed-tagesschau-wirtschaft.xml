@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Tagesschau Wirtschaft</title>
+    <link>https://www.tagesschau.de/wirtschaft</link>
+    <item>
+      <title>Zentralbank lässt Leitzinsen unverändert</title>
+      <link>https://www.tagesschau.de/wirtschaft/2025-06/leitzins</link>
+      <guid isPermaLink="true">https://www.tagesschau.de/wirtschaft/2025-06/leitzins</guid>
+      <pubDate>Mon, 09 Jun 2025 08:00:00 +0000</pubDate>
+      <description>Die Inflation bleibt im Zielbereich, heißt es in der Begründung.</description>
+    </item>
+    <item>
+      <title>Strompreise sinken laut Verbraucherzentrale spürbar</title>
+      <link>https://www.tagesschau.de/wirtschaft/2025-06/strompreise</link>
+      <guid isPermaLink="true">https://www.tagesschau.de/wirtschaft/2025-06/strompreise</guid>
+      <pubDate>Sun, 08 Jun 2025 11:20:00 +0000</pubDate>
+      <description>Haushalte zahlen im Schnitt etwa zehn Prozent weniger als vor einem Jahr.</description>
+    </item>
+  </channel>
+</rss>

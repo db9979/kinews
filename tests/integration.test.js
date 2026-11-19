@@ -23,8 +23,10 @@ async function ladeMock(name) {
 }
 
 /**
- * Baut die Mock-Feeds so auf, dass jede der fünf Quellen gültige Inhalte
- * liefert – die Ars-Technica-URL zeigt auf einen ungültigen Feed (Fehlerpfad).
+ * Baut die Mock-Feeds so auf, dass jede der fünf klassischen Quellen gültige
+ * Inhalte liefert – die Ars-Technica-URL zeigt auf einen ungültigen Feed
+ * (Fehlerpfad). Die drei politischen Quellen (Zeit, Tagesschau) werden mit
+ * eigenen Mock-Feeds versorgt, damit sie gültig abgerufen werden.
  */
 async function bauMockMapping({ arsGueltig = false } = {}) {
   const mapping = new Map();
@@ -38,7 +40,19 @@ async function bauMockMapping({ arsGueltig = false } = {}) {
         : "<rss version='2.0'><channel><title>kaputt</title></channel></rss>"
     ],
     [QUELLEN[3].rssUrl, await ladeMock("feed-atom.xml")],
-    [QUELLEN[4].rssUrl, await ladeMock("feed-mit.xml")]
+    [QUELLEN[4].rssUrl, await ladeMock("feed-mit.xml")],
+    [
+      QUELLEN[5].rssUrl,
+      await ladeMock("feed-zeit-welt.xml")
+    ],
+    [
+      QUELLEN[6].rssUrl,
+      await ladeMock("feed-tagesschau-wirtschaft.xml")
+    ],
+    [
+      QUELLEN[7].rssUrl,
+      await ladeMock("feed-tagesschau-politik.xml")
+    ]
   ];
   for (const [url, inhalt] of feeds) mapping.set(url, inhalt);
   return mapping;
@@ -68,18 +82,19 @@ async function umgebung({ arsGueltig = false } = {}) {
   return { speicher, ereignisse, ereignisseListe, scheduler, verzeichnis };
 }
 
-test("Rundlauf: alle fünf Quellen abgerufen, neue Artikel gespeichert und gemeldet", async () => {
+test("Rundlauf: alle acht Quellen abgerufen, neue Artikel gespeichert und gemeldet", async () => {
   const { speicher, ereignisseListe, scheduler, verzeichnis } = await umgebung();
   await scheduler.durchlauf();
 
-  // Status: 4 Quellen ok, Ars Technica fehlerhaft (kaputter Mock-Feed)
+  // Status: 7 Quellen ok, Ars Technica fehlerhaft (kaputter Mock-Feed)
   const status = speicher.statusListe();
-  assert.equal(status.length, 5);
-  assert.equal(status.filter((s) => s.ok).length, 4);
+  assert.equal(status.length, 8);
+  assert.equal(status.filter((s) => s.ok).length, 7);
   assert.equal(status.find((s) => s.id === "arstechnica").ok, false);
 
-  // 2 (Verge) + 2 (TechCrunch) + 2 (VentureBeat, Atom) + 2 (MIT, Feed wie TechCrunch) = 8 Artikel
-  assert.equal(speicher.liste().length, 8);
+  // 2 (Verge) + 2 (TechCrunch) + 2 (VentureBeat, Atom) + 2 (MIT)
+  // + 2 (Zeit Welt) + 2 (Tagesschau Wirtschaft) + 2 (Tagesschau Politik) = 14 Artikel
+  assert.equal(speicher.liste().length, 14);
 
   // Jeder Artikel hat die vereinbarten Felder
   for (const artikel of speicher.liste()) {
@@ -92,9 +107,9 @@ test("Rundlauf: alle fünf Quellen abgerufen, neue Artikel gespeichert und gemel
     assert.ok("bild" in artikel);
   }
 
-  // Neue Artikel wurden pro Quelle gemeldet
+  // Neue Artikel wurden pro Quelle gemeldet (7 ok-Quellen à 2 Artikel)
   const neueMeldungen = ereignisseListe.filter((e) => e.typ === "neue_artikel");
-  assert.equal(neueMeldungen.length, 4);
+  assert.equal(neueMeldungen.length, 7);
 
   // Chronologisch absteigend
   const liste = speicher.liste();
@@ -104,21 +119,22 @@ test("Rundlauf: alle fünf Quellen abgerufen, neue Artikel gespeichert und gemel
   await rm(verzeichnis, { recursive: true, force: true });
 });
 
-test("Rundlauf mit gültiger Ars-Technica-Quelle: alle fünf Quellen ok, Duplikate werden unterdrückt", async () => {
+test("Rundlauf mit gültiger Ars-Technica-Quelle: alle acht Quellen ok, Duplikate werden unterdrückt", async () => {
   const { speicher, ereignisseListe, scheduler, verzeichnis } = await umgebung({ arsGueltig: true });
   await scheduler.durchlauf();
 
   const status = speicher.statusListe();
-  assert.equal(status.filter((s) => s.ok).length, 5);
+  assert.equal(status.filter((s) => s.ok).length, 8);
   assert.equal(status.find((s) => s.id === "arstechnica").ok, true);
 
-  // Verge(2) + TechCrunch(2) + Ars(2) + VentureBeat(2) + MIT(2) = 10 eindeutige Artikel
-  assert.equal(speicher.liste().length, 10);
+  // Verge(2) + TechCrunch(2) + Ars(2) + VentureBeat(2) + MIT(2)
+  // + Zeit(2) + Tagesschau-Wirtschaft(2) + Tagesschau-Politik(2) = 16 eindeutige Artikel
+  assert.equal(speicher.liste().length, 16);
 
   // Zweiter Durchlauf: keine neuen Artikel, keine Duplikate
   ereignisseListe.length = 0;
   await scheduler.durchlauf();
-  assert.equal(speicher.liste().length, 10);
+  assert.equal(speicher.liste().length, 16);
   assert.equal(ereignisseListe.filter((e) => e.typ === "neue_artikel").length, 0);
   await rm(verzeichnis, { recursive: true, force: true });
 });
