@@ -134,6 +134,7 @@ function erstelleKarte(artikel, { neu = false } = {}) {
 
 function gefilterteArtikel() {
   let liste = state.artikel;
+  if (state.kategorie) liste = liste.filter((a) => a.kategorie === state.kategorie);
   if (state.quelle) liste = liste.filter((a) => a.quelle === state.quelle);
   if (state.suche) {
     const begriff = state.suche.toLowerCase();
@@ -151,7 +152,7 @@ function rendertGrid({ neueIds = new Set() } = {}) {
 
   const liste = gefilterteArtikel();
   zaehler.textContent = liste.length > 0
-    ? `${liste.length} Artikel${state.quelle ? ` von ${quellensuche(state.quelle).name}` : ""}${state.suche ? ` zu „${state.suche}“` : ""}`
+    ? `${liste.length} Artikel${state.kategorie ? ` in ${state.kategorie}` : ""}${state.quelle ? ` von ${quellensuche(state.quelle).name}` : ""}${state.suche ? ` zu „${state.suche}“` : ""}`
     : "";
 
   if (liste.length === 0) {
