@@ -5,7 +5,7 @@
 
 /* ---------- Zustand ---------- */
 const state = {
-  artikle: [],
+  artikel: [],
   quellens: [],
   status: [],
   quelle: "", // "" = alle
@@ -27,7 +27,8 @@ function quellensuche(id) {
 }
 
 function sortiereChronologisch(liste) {
-  return [...liste].sort((a, b) => String(b.zeit ?? "").localeCompare(String(a.zeit ?? "")));
+  const basis = Array.isArray(liste) ? liste : [];
+  return [...basis].sort((a, b) => String(b.zeit ?? "").localeCompare(String(a.zeit ?? "")));
 }
 
 function formatiereZeit(iso) {

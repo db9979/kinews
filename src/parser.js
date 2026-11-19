@@ -7,7 +7,11 @@ import crypto from "node:crypto";
 /* ---------- XML-Basis-Helfer (ohne externe Abhängigkeiten) ---------- */
 
 function entmaskiereXml(text) {
+  // CDATA-Blöcke (häufig in Atom-Feeds, z. B. The Verge):
+  // <![CDATA[ … ]]> → rohen Inhalt, ohne die Marker zu behalten.
   return String(text ?? "")
+    .replace(/<!\[CDATA\[\s*/g, "")
+    .replace(/\s*\]\]>/g, "")
     .replace(/&lt;/g, "<")
     .replace(/&gt;/g, ">")
     .replace(/&quot;/g, '"')
