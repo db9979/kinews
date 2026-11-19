@@ -74,7 +74,7 @@ function linkAusBlock(block) {
     const kopf = block.slice(start, groesser);
     const href = kopf.match(/href\s*=\s*["']([^"']+)["']/);
     const rel = kopf.match(/rel\s*=\s*["']([^"']+)["']/);
-    if (href && (!rel || rel[1] === "alternate")) return href[1];
+    if (href && (!rel || rel[1] === "alternate") && /^https?:\/\//i.test(href[1])) return href[1];
     position = groesser + 1;
   }
   const guid = tagInhalt(block, "guid").trim();

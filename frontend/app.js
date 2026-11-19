@@ -95,7 +95,7 @@ function erstelleKarte(artikel, { neu = false } = {}) {
   badge.append(punkt, document.createTextNode(quelle.name));
   const zeit = document.createElement("time");
   zeit.className = "karte-zeit";
-  zeit.dateTime = artikel.zeit ?? "";
+  zeit.setAttribute("datetime", artikel.zeit ?? "");
   zeit.title = formatiereZeit(artikel.zeit);
   zeit.textContent = relativZeit(artikel.zeit);
   kopf.append(badge, zeit);
