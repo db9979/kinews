@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>MIT Technology Review</title>
+    <link>https://www.technologyreview.com</link>
+    <item>
+      <title>MIT researchers publish breakthrough in neural AI</title>
+      <link>https://www.technologyreview.com/2025/06/09/neural-ai</link>
+      <guid isPermaLink="true">https://www.technologyreview.com/2025/06/09/neural-ai</guid>
+      <pubDate>Mon, 09 Jun 2025 14:00:00 +0000</pubDate>
+      <description>A new approach to machine learning reduces energy use dramatically.</description>
+      <media:content url="https://www.technologyreview.com/img/neural.jpg" type="image/jpeg" medium="image"/>
+    </item>
+    <item>
+      <title>Why generative AI is reshaping the creative industries</title>
+      <link>https://www.technologyreview.com/2025/06/08/generative-ai</link>
+      <guid isPermaLink="true">https://www.technologyreview.com/2025/06/08/generative-ai</guid>
+      <pubDate>Sun, 08 Jun 2025 07:00:00 +0000</pubDate>
+      <description>Designers and writers grapple with LLM tools in their daily work.</description>
+    </item>
+  </channel>
+</rss>

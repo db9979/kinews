@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+  <channel>
+    <title>TechCrunch AI</title>
+    <link>https://techcrunch.com</link>
+    <item>
+      <title>Startup raises $50M to bring AI to hospitals</title>
+      <link>https://techcrunch.com/2025/06/09/ai-hospitals</link>
+      <guid>https://techcrunch.com/2025/06/09/ai-hospitals</guid>
+      <pubDate>Mon, 09 Jun 2025 13:00:00 +0000</pubDate>
+      <description>The seed round is led by a venture fund focused on health tech.</description>
+    </item>
+    <item>
+      <title>Google DeepMind unveils new robot</title>
+      <link>https://techcrunch.com/2025/06/09/deepmind-robot</link>
+      <guid>https://techcrunch.com/2025/06/09/deepmind-robot</guid>
+      <pubDate>Mon, 09 Jun 2025 12:30:00 +0000</pubDate>
+      <description>The humanoid robot can now fold laundry and make coffee.</description>
+    </item>
+  </channel>
+</rss>

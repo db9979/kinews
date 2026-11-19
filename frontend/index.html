@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="KiNews – aktuelle KI-Nachrichten von fünf Quellen in Echtzeit." />
+    <title>KiNews – KI-Nachrichten in Echtzeit</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E%F0%9F%91%9E%3C/text%3E%3C/svg%3E"
+    />
+  </head>
+  <body>
+    <header class="kopf">
+      <div class="kopf-inhalt">
+        <div class="marke">
+          <span class="marke-ikon" aria-hidden="true">🤖</span>
+          <div>
+            <h1>KiNews</h1>
+            <p class="untertitel">Aktuelle KI-Nachrichten aus fünf Quellen – in Echtzeit</p>
+          </div>
+        </div>
+        <ul id="quellenstatus" class="statusleiste" aria-label="Quellenstatus">
+          <li class="statuspunkt status-laden" data-quelle="theverge">The Verge AI</li>
+          <li class="statuspunkt status-laden" data-quelle="techcrunch">TechCrunch AI</li>
+          <li class="statuspunkt status-laden" data-quelle="arstechnica">Ars Technica AI</li>
+          <li class="statuspunkt status-laden" data-quelle="venturebeat">VentureBeat AI</li>
+          <li class="statuspunkt status-laden" data-quelle="mittr">MIT Technology Review</li>
+        </ul>
+      </div>
+    </header>
+
+    <main class="haupt">
+      <section class="steuerung" aria-label="Filter und Suche">
+        <div id="quellenfilter" class="filterleiste" role="group" aria-label="Filter nach Quelle">
+          <button type="button" class="filterchip aktiv" data-quelle="">Alle Quellen</button>
+        </div>
+        <div class="suche">
+          <label for="suchfeld" class="visuell-versteckt">Artikel durchsuchen</label>
+          <input
+            id="suchfeld"
+            type="search"
+            placeholder="Artikel durchsuchen …"
+            autocomplete="off"
+          />
+        </div>
+        <p id="zähler" class="zaehler" aria-live="polite"></p>
+      </section>
+
+      <section id="newsgrid" class="newsgrid" aria-label="KI-Nachrichten"></section>
+    </main>
+
+    <footer class="fuß">
+      <p>KiNews · automatisch alle 5 Minuten aktualisiert · Quellen: The Verge AI, TechCrunch AI, Ars Technica AI, VentureBeat AI, MIT Technology Review</p>
+    </footer>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
