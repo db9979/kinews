@@ -9,12 +9,14 @@ const state = {
   quellens: [],
   status: [],
   quelle: "", // "" = alle
+  kategorie: "", // "" = alle
   suche: "",
   verbunden: false,
   letzteAktualisierung: null
 };
 
 const grid = document.getElementById("newsgrid");
+const kategorieLeiste = document.getElementById("kategoriefilter");
 const filterLeiste = document.getElementById("quellenfilter");
 const statusLeiste = document.getElementById("quellenstatus");
 const suchfeld = document.getElementById("suchfeld");
@@ -232,6 +234,18 @@ function setzeQuelle(id) {
     chip.classList.toggle("aktiv", chip.dataset.quelle === state.quelle);
   });
   rendertGrid();
+}
+
+if (kategorieLeiste) {
+  kategorieLeiste.querySelectorAll(".filterchip[data-kategorie]").forEach((chip) => {
+    chip.addEventListener("click", () => {
+      state.kategorie = chip.dataset.kategorie === state.kategorie ? "" : chip.dataset.kategorie;
+      kategorieLeiste.querySelectorAll(".filterchip").forEach((c) => {
+        c.classList.toggle("aktiv", c.dataset.kategorie === state.kategorie);
+      });
+      rendertGrid();
+    });
+  });
 }
 
 suchfeld.addEventListener("input", () => {
