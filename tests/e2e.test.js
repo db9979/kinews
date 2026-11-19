@@ -99,16 +99,19 @@ test("E2E: Start, API, Auto-Update ohne Reload, Frontend", async (t) => {
   const css = await fetch(`${BASIS}/styles.css`).then((r) => r.text());
   assert.match(css, /repeat\(3, minmax\(0, 1fr\)\)/);
 
-  // 2) Quellen-API listet genau die fünf konfigurierten Quellen
+  // 2) Quellen-API listet genau die acht konfigurierten Quellen
   const quellens = await fetch(`${BASIS}/api/quellen`).then((r) => r.json());
-  assert.equal(quellens.quellens.length, 5);
+  assert.equal(quellens.quellens.length, 8);
   const namen = quellens.quellens.map((q) => q.name);
   for (const erwartet of [
     "The Verge AI",
     "TechCrunch AI",
     "Ars Technica AI",
     "VentureBeat AI",
-    "MIT Technology Review"
+    "MIT Technology Review",
+    "Zeit Welt",
+    "Tagesschau Wirtschaft",
+    "Tagesschau Politik"
   ]) {
     assert.ok(namen.includes(erwartet), `Quelle fehlt: ${erwartet}`);
   }
@@ -129,12 +132,12 @@ test("E2E: Start, API, Auto-Update ohne Reload, Frontend", async (t) => {
   }
   assert.match(artikel0.url, /^https?:\/\//);
 
-  // 4) Alle fünf Quellen wurden geprüft (Status)
+  // 4) Alle acht Quellen wurden geprüft (Status)
   const statusOk = await warteBis(async () => {
     const daten = await fetch(`${BASIS}/api/status`).then((r) => r.json());
-    return daten.status.length === 5 && daten.status.every((s) => s.ok) ? daten : null;
+    return daten.status.length === 8 && daten.status.every((s) => s.ok) ? daten : null;
   });
-  assert.ok(statusOk, "Status zeigt alle fünf Quellen als erreichbar");
+  assert.ok(statusOk, "Status zeigt alle acht Quellen als erreichbar");
   assert.equal(statusOk.intervallMin, 5);
 
   // 5) Auto-Update ohne Reload: zweiter Durchlauf liefert neue Artikel via SSE

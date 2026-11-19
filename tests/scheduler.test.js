@@ -25,7 +25,7 @@ async function bauUmgebung() {
   return { speicher, ereignisse, verzeichnis };
 }
 
-test("Durchlauf ruft alle fünf Quellen ab und meldet neue Artikel über den EventBus", async () => {
+test("Durchlauf ruft alle acht Quellen ab und meldet neue Artikel über den EventBus", async () => {
   const { speicher, ereignisse, verzeichnis } = await bauUmgebung();
   const aufrufe = [];
   const abrufeFeed = async (url) => {
@@ -33,6 +33,9 @@ test("Durchlauf ruft alle fünf Quellen ab und meldet neue Artikel über den Eve
     if (url === QUELLEN[0].rssUrl) return await ladeMock("feed-vg.xml");
     if (url === QUELLEN[1].rssUrl) return await ladeMock("feed-tc.xml");
     if (url === QUELLEN[3].rssUrl) return await ladeMock("feed-atom.xml");
+    if (url === QUELLEN[5].rssUrl) return await ladeMock("feed-zeit-welt.xml");
+    if (url === QUELLEN[6].rssUrl) return await ladeMock("feed-tagesschau-wirtschaft.xml");
+    if (url === QUELLEN[7].rssUrl) return await ladeMock("feed-tagesschau-politik.xml");
     const fehler = new Error("Offline");
     fehler.status = 0;
     throw fehler;
@@ -57,19 +60,19 @@ test("Durchlauf ruft alle fünf Quellen ab und meldet neue Artikel über den Eve
 
   await scheduler.durchlauf();
 
-  assert.equal(aufrufe.length, 5);
-  // 2 Verge (Bread-Artikel gefiltert) + 2 TechCrunch + 2 VentureBeat (Atom) = 6
-  assert.equal(speicher.liste().length, 6);
+  assert.equal(aufrufe.length, 8);
+  // 2 Verge + 2 TechCrunch + 2 VentureBeat (Atom) + 2 Zeit + 2 Tagesschau-Wirtschaft + 2 Tagesschau-Politik = 12
+  assert.equal(speicher.liste().length, 12);
   const statusListe = speicher.statusListe();
-  assert.equal(statusListe.length, 5);
-  assert.equal(statusListe.filter((s) => s.ok).length, 3);
+  assert.equal(statusListe.length, 8);
+  assert.equal(statusListe.filter((s) => s.ok).length, 6);
   assert.equal(statusListe.filter((s) => !s.ok).length, 2);
 
   const neueMeldungen = ereignisseListe.filter((e) => e.typ === "neue_artikel");
-  assert.equal(neueMeldungen.length, 3);
+  assert.equal(neueMeldungen.length, 6);
   const statusMeldung = ereignisseListe.find((e) => e.typ === "status");
   assert.ok(statusMeldung);
-  assert.equal(statusMeldung.daten.status.length, 5);
+  assert.equal(statusMeldung.daten.status.length, 8);
 
   await rm(verzeichnis, { recursive: true, force: true });
 });

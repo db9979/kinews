@@ -36,7 +36,12 @@ export function erstelleScheduler({
     try {
       const xml = await abrufeFeed(quelle.rssUrl, { timeoutMs });
       const artikle = parseFeed(xml, quelle);
-      const kiArtikel = artikle.filter((a) => enthaeltKeyword(a, quelle.keywords));
+      // Quellen mit leerer Keyword-Liste (z. B. allgemeine News-Feeds) filtern
+      // nicht: alle Artikel werden übernommen.
+      const kiArtikel =
+        quelle.keywords && quelle.keywords.length > 0
+          ? artikle.filter((a) => enthaeltKeyword(a, quelle.keywords))
+          : artikle;
       const neue = await speicher.hinzufuege(kiArtikel);
 
       speicher.setzeStatus(quelle.id, {
