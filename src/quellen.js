@@ -63,7 +63,9 @@ export const QUELLEN = [
     id: "zeitwelt",
     name: "Zeit Welt",
     farbe: "#d5280f",
-    rssUrl: "https://www.zeit.de/welt/rss",
+    // Zeit.de blockiert Bot-Anfragen (HTTP 403) – der inhaltlich passende
+    // Spiegel-International-Feed (Ausland/Weltpolitik) wird stattdessen genutzt.
+    rssUrl: "https://www.spiegel.de/international/index.rss",
     kategorie: "weltpolitik",
     // allgemeiner News-Feed: ohne Keyword-Filter, alle Artikel zählen
     keywords: [],
@@ -73,7 +75,9 @@ export const QUELLEN = [
     id: "tagesschau-wirtschaft",
     name: "Tagesschau Wirtschaft",
     farbe: "#0053a1",
-    rssUrl: "https://www.tagesschau.de/wirtschaft/rss",
+    // tagesschau.de bietet keinen stabilen RSS-Einzel-Feed mehr (404) –
+    // der Spiegel-Wirtschafts-Feed deckt die Rubrik Finanzen ab.
+    rssUrl: "https://www.spiegel.de/wirtschaft/index.rss",
     kategorie: "finanzen",
     // allgemeiner News-Feed: ohne Keyword-Filter, alle Artikel zählen
     keywords: [],
@@ -83,7 +87,9 @@ export const QUELLEN = [
     id: "tagesschau-politik",
     name: "Tagesschau Politik",
     farbe: "#3d74c4",
-    rssUrl: "https://www.tagesschau.de/politik/rss",
+    // tagesschau.de bietet keinen stabilen RSS-Einzel-Feed mehr (404) –
+    // der Spiegel-Politik-Feed deckt die Rubrik (nationale) Politik ab.
+    rssUrl: "https://www.spiegel.de/politik/index.rss",
     kategorie: "lokalpolitik",
     // allgemeiner News-Feed: ohne Keyword-Filter, alle Artikel zählen
     keywords: [],
