@@ -28,16 +28,56 @@ function makeEl(tag) {
         want ? !has && el._classes.push(c) : has && (el._classes = el._classes.filter((x) => x !== c));
       }
     },
-    appendChild(child) { el._children.push(child); child.parentNode = el; return child; },
-    append(...items) { items.forEach((i) => i && i.nodeType !== 3 && el.appendChild(i)); },
+    appendChild(child) {
+      // Dokumentfragmente werden aufgelöst (echtes DOM-Verhalten): ihre
+      // Kinder wandern in das Element.
+      if (child && child.nodeType === 11) {
+        for (const kind of child._children ?? []) el.appendChild(kind);
+        return el;
+      }
+      el._children.push(child); child.parentNode = el; return child;
+    },
+    append(...items) { items.forEach((i) => i && el.appendChild(i)); },
     remove() { const p = el.parentNode; if (p) { const i = p._children.indexOf(el); i >= 0 && p._children.splice(i, 1); } },
     addEventListener(t, cb) { (el._listeners[t] ||= []).push(cb); },
-    // querySelectorAll: deckt die in app.js genutzten Selektoren ab
+    // querySelectorAll: unterstützt die in app.js genutzten Selektoren –
+    // einfache Tags (h3, p, span, time …), Klassen (.karte-badge) und
+    // Attribut-/:not()-Aussagen (.filterchip[data-quelle]:not([data-quelle=''])).
+    // Die Suche läuft rekursiv über den Kindebaum.
     querySelectorAll(sel) {
-      if (sel === ".statuspunkt") return statusLeiste._children.filter((c) => c._classes.includes("statuspunkt"));
-      if (sel === ".filterchip[data-quelle]") return filterLeiste._children.filter((c) => c._classes.includes("filterchip") && "data-quelle" in c.dataset);
-      if (sel === ".filterchip") return filterLeiste._children.filter((c) => c._classes.includes("filterchip"));
-      return [];
+      const matchSel = (node) => {
+        if (!node || !node._tag) return false;
+        const ds = node.dataset || {};
+        const s = String(sel);
+        let notOk = true;
+        const notM = s.match(/:not\(\s*\[\s*([\w-]+)\s*=\s*'([^']*)'\s*\]\s*\)/);
+        if (notM) {
+          const key = notM[1].startsWith("data-") ? notM[1].slice(5) : notM[1];
+          notOk = !((key in ds) && String(ds[key]) === notM[2]);
+        }
+        let rest = s.replace(/:not\(\s*\[[\w-]+\s*=\s*'[^']*'\s*\]/g, "");
+        const tagM = rest.match(/^([a-zA-Z][\w-]*)/);
+        if (tagM) { if (node._tag !== tagM[1]) return false; rest = rest.slice(tagM[1].length); }
+        for (const c of rest.match(/\.([\w-]+)/g) || []) {
+          if (!(node._classes || []).includes(c.slice(1))) return false;
+        }
+        for (const a of rest.match(/\[[\w-]+(?:='[^']*')?\]/g) || []) {
+          const am = a.match(/\[([\w-]+)(?:='([^']*)')?\]/);
+          const key = am[1].startsWith("data-") ? am[1].slice(5) : am[1];
+          if (!(key in ds)) return false;
+          if (am[2] !== undefined && String(ds[key]) !== am[2]) return false;
+        }
+        return notOk;
+      };
+      const ergebnis = [];
+      const suche = (node) => {
+        for (const kind of node._children || []) {
+          if (matchSel(kind)) ergebnis.push(kind);
+          if (kind._tag) suche(kind);
+        }
+      };
+      suche(el);
+      return ergebnis;
     },
     querySelector(sel) { return el.querySelectorAll(sel)[0] || null; }
   };
@@ -140,7 +180,8 @@ class FakeEventSource {
   }
 }
 global.EventSource = FakeEventSource;
-global.fetch = (u, o) => fetch(new URL(u, BASE).href, o);
+const nativFetch = fetch;
+global.fetch = (u, o) => nativFetch(new URL(u, BASE).href, o);
 
 /* ---------- Echte app.js laden und ausführen ---------- */
 const code = readFileSync(new URL("../frontend/app.js", import.meta.url), "utf8");
@@ -168,10 +209,7 @@ if (karten.length > 0) {
   const link = h3 ? h3._children[0] : null;
   const titel = link?.textContent ?? "";
   const url = link?.attrs?.href ?? link?.href ?? "";
-  const timeEl = k.querySelector ? null : null;
-  // time-Element: in inhalt (kind of k) suchen
   const inhalt = k._children.find((c) => c._classes.includes("karte-inhalt"));
-  const kopf = inhalt?.querySelector ? inhalt : null;
   const zeitEl = inhalt ? inhalt._children[0] : null; // kopf
   const time = zeitEl ? zeitEl._children.find((c) => c._tag === "time") : null;
   const zeit = time?.attrs?.dateTime ?? time?._text ?? "";

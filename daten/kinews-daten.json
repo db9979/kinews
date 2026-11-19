@@ -206,36 +206,45 @@
       "zeit": "2026-11-16T18:38:47.000Z",
       "beschreibung": "This story originally appeared in The Algorithm, our weekly newsletter on AI. To get stories like this in your inbox first, sign up here. On Friday, a petition to reinstate Jensen Huang as CEO of Nvidia began circulating on social media, and by Monday it listed some notable signatories, including Elon Musk and several influential Nvidia…",
       "bild": null
+    },
+    {
+      "id": "029ded4e9a8f172f9007",
+      "url": "https://www.theverge.com/tech/1037100/apple-siri-recap-audio-intelligence-hands-on",
+      "titel": "I let Apple’s always-listening AI summarize my life for two weeks",
+      "quelle": "theverge",
+      "zeit": "2026-11-19T13:00:00.000Z",
+      "beschreibung": "Was it worth it? I've been asking myself this quite a bit over the last month or so while testing both the Amazon Bee Frontier and Siri Recap on the Apple Watch Ultra 4. Both enable a wearable to ambiently listen to your conversations and, using AI, summarize them for you. Why? So you can […]",
+      "bild": null
     }
   ],
   "status": {
     "techcrunch": {
       "ok": true,
-      "letztePruefung": "2026-11-19T12:46:31.611Z",
+      "letztePruefung": "2026-11-19T13:08:11.785Z",
       "fehler": null,
       "artikelGefunden": 12
     },
     "arstechnica": {
       "ok": true,
-      "letztePruefung": "2026-11-19T12:46:31.627Z",
+      "letztePruefung": "2026-11-19T13:08:11.806Z",
       "fehler": null,
       "artikelGefunden": 4
     },
     "theverge": {
       "ok": true,
-      "letztePruefung": "2026-11-19T12:46:31.645Z",
+      "letztePruefung": "2026-11-19T13:08:11.784Z",
       "fehler": null,
-      "artikelGefunden": 3
+      "artikelGefunden": 4
     },
     "mittr": {
       "ok": true,
-      "letztePruefung": "2026-11-19T12:46:31.672Z",
+      "letztePruefung": "2026-11-19T13:08:11.811Z",
       "fehler": null,
       "artikelGefunden": 4
     },
     "venturebeat": {
       "ok": false,
-      "letztePruefung": "2026-11-19T12:46:31.676Z",
+      "letztePruefung": "2026-11-19T13:08:11.821Z",
       "fehler": "Feed-Status 429 Too Many Requests",
       "artikelGefunden": 0
     }

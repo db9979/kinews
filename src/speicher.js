@@ -18,8 +18,6 @@ export class Speicher {
     this.maxArtikel = maxArtikel;
     this.artikel = [];
     this.status = {};
-    this._urlIndex = new Set();
-    this._titelIndex = [];
     this._warteschlange = Promise.resolve();
   }
 
@@ -56,7 +54,6 @@ export class Speicher {
         this.artikel = [];
         this.status = {};
       }
-      this._baueIndex();
     });
   }
 
@@ -78,12 +75,10 @@ export class Speicher {
       const tatsaechlichNeue = neueArtikelAuffinden(neue, this.artikel);
       if (tatsaechlichNeue.length > 0) {
         this.artikel.push(...tatsaechlichNeue);
-        this._baueIndex();
         if (this.artikel.length > this.maxArtikel) {
           // Älteste Artikel entfernen (nach zeit aufsteigend sortieren und kürzen)
           this.artikel.sort((a, b) => (a.zeit ?? "").localeCompare(b.zeit ?? ""));
           this.artikel = this.artikel.slice(this.artikel.length - this.maxArtikel);
-          this._baueIndex();
         }
         await this._schreibe();
       }
@@ -102,10 +97,5 @@ export class Speicher {
 
   statusListe() {
     return Object.entries(this.status).map(([id, s]) => ({ id, ...s }));
-  }
-
-  _baueIndex() {
-    this._urlIndex = new Set(this.artikel.map((a) => a.url).filter(Boolean));
-    this._titelIndex = [];
   }
 }
