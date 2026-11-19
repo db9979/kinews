@@ -63,9 +63,9 @@ export const QUELLEN = [
     id: "zeitwelt",
     name: "Zeit Welt",
     farbe: "#d5280f",
-    // Hinweis: zeit.de kann bei Bot-Anfragen HTTP 403 antworten – der Feed
-    // ist in der Spezifikation verbindlich und bleibt unverändert.
-    rssUrl: "https://www.zeit.de/welt/rss",
+    // newsfeed.zeit.de ist das stabile, nicht bot-geschützte RSS-Endpoint der
+    // ZEIT (www.zeit.de/welt/rss antwortet mit 403 auf Server-Requests).
+    rssUrl: "https://newsfeed.zeit.de",
     kategorie: "weltpolitik",
     // allgemeiner News-Feed: ohne Keyword-Filter, alle Artikel zählen
     keywords: [],
@@ -75,9 +75,9 @@ export const QUELLEN = [
     id: "tagesschau-wirtschaft",
     name: "Tagesschau Wirtschaft",
     farbe: "#0053a1",
-    // Hinweis: tagesschau.de kann bei Bot-Anfragen Fehler antworten – die
-    // Feed-URL ist in der Spezifikation verbindlich und bleibt unverändert.
-    rssUrl: "https://www.tagesschau.de/wirtschaft/rss",
+    // Stabiles RSS-Endpoint der Tagesschau-Sektion Wirtschaft
+    // (tagesschau.de/wirtschaft/rss existiert nicht; das ist der korrekte Pfad).
+    rssUrl: "https://www.tagesschau.de/wirtschaft/index~rss2.xml",
     kategorie: "finanzen",
     // allgemeiner News-Feed: ohne Keyword-Filter, alle Artikel zählen
     keywords: [],
@@ -87,9 +87,9 @@ export const QUELLEN = [
     id: "tagesschau-politik",
     name: "Tagesschau Politik",
     farbe: "#3d74c4",
-    // Hinweis: tagesschau.de kann bei Bot-Anfragen Fehler antworten – die
-    // Feed-URL ist in der Spezifikation verbindlich und bleibt unverändert.
-    rssUrl: "https://www.tagesschau.de/politik/rss",
+    // "Lokalpolitik (deutschlandweit)" = nationale/innere deutsche Politik:
+    // Sektion "inland" der Tagesschau (tagesschau.de/politik/rss existiert nicht).
+    rssUrl: "https://www.tagesschau.de/inland/index~rss2.xml",
     kategorie: "lokalpolitik",
     // allgemeiner News-Feed: ohne Keyword-Filter, alle Artikel zählen
     keywords: [],

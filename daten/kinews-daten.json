@@ -305,54 +305,74 @@
       "beschreibung": "In some of these instances, employees said Muse surfaced messages about childcare requests they never made, career advice they never asked for, product orders they never placed, and bank account balances that didn't belong to them.",
       "bild": null,
       "kategorie": "ai"
+    },
+    {
+      "id": "1054662f25c3d852e57e",
+      "url": "https://techcrunch.com/2026/11/19/google-gives-gemini-the-ability-to-use-your-mac-for-you/",
+      "titel": "Google gives Gemini the ability to use your Mac for you",
+      "quelle": "techcrunch",
+      "zeit": "2026-11-19T18:09:11.000Z",
+      "beschreibung": "Google's latest update to Gemini brings an AI agent to the Mac that can organize files, fill out forms, and tackle multistep workflows.",
+      "bild": null,
+      "kategorie": "ai"
+    },
+    {
+      "id": "a628e3d51eab8a75a863",
+      "url": "https://www.theverge.com/tech/1037902/google-gemini-macos-ai-computer-use",
+      "titel": "Gemini on Mac can now use your computer",
+      "quelle": "theverge",
+      "zeit": "2026-11-19T18:21:13.000Z",
+      "beschreibung": "Google's Gemini app for macOS now has computer use, meaning it can help you \"get multi-step tasks done across your local files, desktop apps, and the web,\" the company says. Google suggests the feature might be useful for things like speeding up workflows, filling in forms, making presentations, and listing items for sale. Users will […]",
+      "bild": null,
+      "kategorie": "ai"
     }
   ],
   "status": {
     "techcrunch": {
       "ok": true,
-      "letztePruefung": "2026-11-19T18:08:39.849Z",
+      "letztePruefung": "2026-11-19T18:44:04.793Z",
       "fehler": null,
       "artikelGefunden": 13
     },
     "arstechnica": {
       "ok": true,
-      "letztePruefung": "2026-11-19T18:08:39.923Z",
+      "letztePruefung": "2026-11-19T18:44:04.797Z",
       "fehler": null,
       "artikelGefunden": 4
     },
     "theverge": {
       "ok": true,
-      "letztePruefung": "2026-11-19T18:08:39.828Z",
+      "letztePruefung": "2026-11-19T18:44:04.914Z",
       "fehler": null,
-      "artikelGefunden": 3
+      "artikelGefunden": 2
     },
     "mittr": {
       "ok": true,
-      "letztePruefung": "2026-11-19T18:08:39.998Z",
+      "letztePruefung": "2026-11-19T18:44:04.933Z",
       "fehler": null,
       "artikelGefunden": 4
     },
     "venturebeat": {
       "ok": false,
-      "letztePruefung": "2026-11-19T18:08:39.982Z",
+      "letztePruefung": "2026-11-19T18:44:04.770Z",
       "fehler": "Feed-Status 429 Too Many Requests",
       "artikelGefunden": 0
     },
     "zeitwelt": {
       "ok": false,
-      "letztePruefung": "2026-11-19T18:08:40.035Z",
+      "letztePruefung": "2026-11-19T18:44:05.034Z",
       "fehler": "Feed-Status 403",
       "artikelGefunden": 0
     },
     "tagesschau-politik": {
       "ok": false,
-      "letztePruefung": "2026-11-19T18:08:40.101Z",
+      "letztePruefung": "2026-11-19T18:44:04.966Z",
       "fehler": "Feed-Status 404 Not Found",
       "artikelGefunden": 0
     },
     "tagesschau-wirtschaft": {
       "ok": false,
-      "letztePruefung": "2026-11-19T18:08:40.089Z",
+      "letztePruefung": "2026-11-19T18:44:04.998Z",
       "fehler": "Feed-Status 404 Not Found",
       "artikelGefunden": 0
     }

@@ -40,6 +40,7 @@ function makeEl(tag) {
     append(...items) { items.forEach((i) => i && el.appendChild(i)); },
     remove() { const p = el.parentNode; if (p) { const i = p._children.indexOf(el); i >= 0 && p._children.splice(i, 1); } },
     addEventListener(t, cb) { (el._listeners[t] ||= []).push(cb); },
+    setAttribute(n, v) { el.attrs[n] = String(v); },
     // querySelectorAll: unterstützt die in app.js genutzten Selektoren –
     // einfache Tags (h3, p, span, time …), Klassen (.karte-badge) und
     // Attribut-/:not()-Aussagen (.filterchip[data-quelle]:not([data-quelle=''])).
@@ -99,7 +100,7 @@ function makeEl(tag) {
 
 const statusLeiste = makeEl("ul");
 statusLeiste._classes.push("statusleiste");
-for (const q of ["theverge", "techcrunch", "arstechnica", "venturebeat", "mittr"]) {
+for (const q of ["theverge", "techcrunch", "arstechnica", "venturebeat", "mittr", "zeitwelt", "tagesschau-wirtschaft", "tagesschau-politik"]) {
   const li = makeEl("li");
   li._classes.push("statuspunkt", "status-laden");
   li.dataset["quelle"] = q;
@@ -237,10 +238,10 @@ const sOk = statusLeiste._children.filter((c) => c.classList.contains("status-ok
 const sErr = statusLeiste._children.filter((c) => c.classList.contains("status-fehler")).length;
 console.log(`Status: ok=${sOk} fehler=${sErr} laden=${laden}`);
 
-// Filterchips: 1 (Alle) + 5 Quellen = 6
+// Filterchips: 1 (Alle) + 8 Quellen = 9
 const chips = filterLeiste._children.filter((c) => c._classes.includes("filterchip")).length;
 console.log("Filterchips:", chips);
-ok = ok && chips === 6;
+ok = ok && chips === 9;
 
 console.log(ok ? "\n=== DOM-PRÜFUNG OK: Karten werden gerendert ===" : "\n=== DOM-PRÜFUNG SCHOITIG ===");
 process.exit(ok ? 0 : 1);
