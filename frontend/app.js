@@ -9,12 +9,14 @@ const state = {
   quellens: [],
   status: [],
   quelle: "", // "" = alle
+  activeCategory: "alle", // "alle" = gesamte Liste
   suche: "",
   verbunden: false,
   letzteAktualisierung: null
 };
 
 const grid = document.getElementById("newsgrid");
+const kategorieLeiste = document.getElementById("kategoriefilter");
 const filterLeiste = document.getElementById("quellenfilter");
 const statusLeiste = document.getElementById("quellenstatus");
 const suchfeld = document.getElementById("suchfeld");
@@ -132,6 +134,7 @@ function erstelleKarte(artikel, { neu = false } = {}) {
 
 function gefilterteArtikel() {
   let liste = state.artikel;
+  if (state.activeCategory !== "alle") liste = liste.filter((a) => a.kategorie === state.activeCategory);
   if (state.quelle) liste = liste.filter((a) => a.quelle === state.quelle);
   if (state.suche) {
     const begriff = state.suche.toLowerCase();
@@ -149,7 +152,7 @@ function rendertGrid({ neueIds = new Set() } = {}) {
 
   const liste = gefilterteArtikel();
   zaehler.textContent = liste.length > 0
-    ? `${liste.length} Artikel${state.quelle ? ` von ${quellensuche(state.quelle).name}` : ""}${state.suche ? ` zu „${state.suche}“` : ""}`
+    ? `${liste.length} Artikel${state.activeCategory !== "alle" ? ` in ${state.activeCategory}` : ""}${state.quelle ? ` von ${quellensuche(state.quelle).name}` : ""}${state.suche ? ` zu „${state.suche}“` : ""}`
     : "";
 
   if (liste.length === 0) {
@@ -232,6 +235,21 @@ function setzeQuelle(id) {
     chip.classList.toggle("aktiv", chip.dataset.quelle === state.quelle);
   });
   rendertGrid();
+}
+
+if (kategorieLeiste) {
+  // data-kategorie="" am Chip „Alle“ entspricht state.activeCategory === "alle"
+  const kategorieAusChip = (chip) => (chip.dataset.kategorie === "" ? "alle" : chip.dataset.kategorie);
+  kategorieLeiste.querySelectorAll(".filterchip[data-kategorie]").forEach((chip) => {
+    chip.addEventListener("click", () => {
+      const ziel = kategorieAusChip(chip);
+      state.activeCategory = ziel === state.activeCategory ? "alle" : ziel;
+      kategorieLeiste.querySelectorAll(".filterchip").forEach((c) => {
+        c.classList.toggle("aktiv", kategorieAusChip(c) === state.activeCategory);
+      });
+      rendertGrid();
+    });
+  });
 }
 
 suchfeld.addEventListener("input", () => {

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Tagesschau Politik</title>
+    <link>https://www.tagesschau.de/politik</link>
+    <item>
+      <title>Bundestag beschließt Reform des Mietrechts</title>
+      <link>https://www.tagesschau.de/politik/2025-06/mietrecht</link>
+      <guid isPermaLink="true">https://www.tagesschau.de/politik/2025-06/mietrecht</guid>
+      <pubDate>Mon, 09 Jun 2025 07:30:00 +0000</pubDate>
+      <description>Die Fraktionen einigen sich nach langem Ringen auf den Gesetzentwurf.</description>
+    </item>
+    <item>
+      <title>Regierungspakt zur Verkehrsinfrastruktur steht vor dem Aus</title>
+      <link>https://www.tagesschau.de/politik/2025-06/verkehrspakt</link>
+      <guid isPermaLink="true">https://www.tagesschau.de/politik/2025-06/verkehrspakt</guid>
+      <pubDate>Sun, 08 Jun 2025 09:45:00 +0000</pubDate>
+      <description>Streit über die Finanzierung blockiert die Abstimmung weiter.</description>
+    </item>
+  </channel>
+</rss>

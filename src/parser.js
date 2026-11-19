@@ -126,7 +126,8 @@ export function normalisiereItem(block, quelle, index = 0) {
     quelle: quelle.id,
     zeit: Number.isNaN(zeit.getTime()) ? null : zeit.toISOString(),
     beschreibung: beschreibung.slice(0, 500),
-    bild: bild || null
+    bild: bild || null,
+    kategorie: quelle.kategorie
   };
 }
 

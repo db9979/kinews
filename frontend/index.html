@@ -33,6 +33,13 @@
 
     <main class="haupt">
       <section class="steuerung" aria-label="Filter und Suche">
+        <div id="kategoriefilter" class="filterleiste" role="group" aria-label="Filter nach Kategorie">
+          <button type="button" class="filterchip kategorie aktiv" data-kategorie="">Alle</button>
+          <button type="button" class="filterchip kategorie" data-kategorie="weltpolitik">Weltpolitik</button>
+          <button type="button" class="filterchip kategorie" data-kategorie="finanzen">Finanzen</button>
+          <button type="button" class="filterchip kategorie" data-kategorie="lokalpolitik">Lokalpolitik</button>
+          <button type="button" class="filterchip kategorie" data-kategorie="ai">KI</button>
+        </div>
         <div id="quellenfilter" class="filterleiste" role="group" aria-label="Filter nach Quelle">
           <button type="button" class="filterchip aktiv" data-quelle="">Alle Quellen</button>
         </div>
