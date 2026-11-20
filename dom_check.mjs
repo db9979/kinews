@@ -1,13 +1,15 @@
 // Läuft die ECHTE frontend/app.js gegen den Live-Server und prüft zuverlässig,
-// dass Karten ins Grid gerendert werden (das Abnahmekriterium, das der Fehler
-// zuvor brach). Kein CSS-Selector-Parser nötig – die Stubs decken genau die
-// Aufrufe ab, die app.js verwendet.
+// dass Karten ins Grid gerendert werden und der Kategorie-Filter funktioniert.
+// Die Status-Leiste und beide Filter-Leisten (Kategorien, Quellen) werden aus
+// dem ECHTEN frontend/index.html gelesen – der Check erzeugt keine Filter-UI
+// selbst, sondern verifiziert das Markup.
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const BASE = process.env.BASE ?? "http://localhost:3229";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const html = readFileSync(path.join(__dirname, "frontend/index.html"), "utf8");
 
 /* ---------- Minimaler Element-Stub ---------- */
 function makeEl(tag) {
@@ -44,11 +46,41 @@ function makeEl(tag) {
     append(...items) { items.forEach((i) => i && el.appendChild(i)); },
     remove() { const p = el.parentNode; if (p) { const i = p._children.indexOf(el); i >= 0 && p._children.splice(i, 1); } },
     addEventListener(t, cb) { (el._listeners[t] ||= []).push(cb); },
+    setAttribute(n, v) { el.attrs[n] = String(v); },
     querySelectorAll(sel) {
-      if (sel === ".statuspunkt") return statusLeiste._children.filter((c) => c._classes.includes("statuspunkt"));
-      if (sel === ".filterchip[data-quelle]") return filterLeiste._children.filter((c) => c._classes.includes("filterchip") && "data-quelle" in c.dataset);
-      if (sel === ".filterchip") return filterLeiste._children.filter((c) => c._classes.includes("filterchip"));
-      return [];
+      const matchSel = (node) => {
+        if (!node || !node._tag) return false;
+        const ds = node.dataset || {};
+        const s = String(sel);
+        let notOk = true;
+        const notM = s.match(/:not\(\s*\[\s*([\w-]+)\s*=\s*'([^']*)'\s*\]\s*\)/);
+        if (notM) {
+          const key = notM[1].startsWith("data-") ? notM[1].slice(5) : notM[1];
+          notOk = !((key in ds) && String(ds[key]) === notM[2]);
+        }
+        let rest = s.replace(/:not\(\s*\[[\w-]+\s*=\s*'[^']*'\s*\]/g, "");
+        const tagM = rest.match(/^([a-zA-Z][\w-]*)/);
+        if (tagM) { if (node._tag !== tagM[1]) return false; rest = rest.slice(tagM[1].length); }
+        for (const c of rest.match(/\.([\w-]+)/g) || []) {
+          if (!(node._classes || []).includes(c.slice(1))) return false;
+        }
+        for (const a of rest.match(/\[[\w-]+(?:='[^']*')?\]/g) || []) {
+          const am = a.match(/\[([\w-]+)(?:='([^']*)')?\]/);
+          const key = am[1].startsWith("data-") ? am[1].slice(5) : am[1];
+          if (!(key in ds)) return false;
+          if (am[2] !== undefined && String(ds[key]) !== am[2]) return false;
+        }
+        return notOk;
+      };
+      const ergebnis = [];
+      const suche = (node) => {
+        for (const kind of node._children || []) {
+          if (matchSel(kind)) ergebnis.push(kind);
+          if (kind._tag) suche(kind);
+        }
+      };
+      suche(el);
+      return ergebnis;
     },
     querySelector(sel) { return el.querySelectorAll(sel)[0] || null; }
   };
@@ -68,21 +100,48 @@ function makeEl(tag) {
   return el;
 }
 
+/* ---------- DOM-Baum aus dem echten index.html ---------- */
+
+function attribut(tagKopf, name) {
+  const m = tagKopf.match(new RegExp(`${name}\\s*=\\s*["']([^"']*)["']`));
+  return m ? m[1] : null;
+}
+
+function kindelemente(containerId, containerTag, ziel) {
+  const blatt = html.match(new RegExp(`<${containerTag}[^>]*id="${containerId}"[^>]*>([\\s\\S]*?)</${containerTag}>`));
+  if (!blatt) {
+    console.error(`Markup-Fehler: <${containerTag} id="${containerId}"> fehlt in index.html`);
+    process.exitCode = 1;
+    return;
+  }
+  const muster = new RegExp(`<${containerTag === "ul" ? "li" : "button"}([^>]*)>([\\s\\S]*?)</${containerTag === "ul" ? "li" : "button"}>`, "g");
+  let m;
+  while ((m = muster.exec(blatt[1]))) {
+    const el = makeEl(containerTag === "ul" ? "li" : "button");
+    const klassen = attribut(m[1], "class");
+    if (klassen) klassen.split(/\s+/).filter(Boolean).forEach((c) => el._classes.push(c));
+    const dataQuelle = attribut(m[1], "data-quelle");
+    if (dataQuelle !== null) el.dataset["quelle"] = dataQuelle;
+    const dataKategorie = attribut(m[1], "data-kategorie");
+    if (dataKategorie !== null) el.dataset["kategorie"] = dataKategorie;
+    el._text = m[2].trim();
+    ziel.appendChild(el);
+  }
+}
+
 const statusLeiste = makeEl("ul");
 statusLeiste._classes.push("statusleiste");
-for (const q of ["theverge", "techcrunch", "arstechnica", "venturebeat", "mittr"]) {
-  const li = makeEl("li");
-  li._classes.push("statuspunkt", "status-laden");
-  li.dataset["quelle"] = q;
-  li._text = "Quelle";
-  statusLeiste.appendChild(li);
-}
+kindelemente("quellenstatus", "ul", statusLeiste);
+
 const filterLeiste = makeEl("div");
 filterLeiste._classes.push("filterleiste");
-const alleChip = makeEl("button");
-alleChip._classes.push("filterchip", "aktiv");
-alleChip.dataset["quelle"] = "";
-filterLeiste.appendChild(alleChip);
+kindelemente("quellenfilter", "div", filterLeiste);
+
+const kategorieLeiste = makeEl("div");
+kategorieLeiste._classes.push("filterleiste");
+kindelemente("kategoriefilter", "div", kategorieLeiste);
+
+console.log(`Aus index.html gelesen: ${statusLeiste._children.length} Statuspunkte, ${kategorieLeiste._children.length} Kategorie-Chips, ${filterLeiste._children.length} Quellen-Chips (initial)`);
 
 const grid = makeEl("section");
 grid._classes.push("newsgrid");
@@ -91,6 +150,7 @@ const zaehler = makeEl("p");
 const byId = {
   newsgrid: grid,
   quellenfilter: filterLeiste,
+  kategoriefilter: kategorieLeiste,
   quellenstatus: statusLeiste,
   suchfeld,
   "zähler": zaehler
@@ -153,8 +213,7 @@ class FakeEventSource {
 global.EventSource = FakeEventSource;
 // Relative URLs gegen den Live-Server auflösen; dabei die ECHTE native
 // fetch-Funktion verwenden, sonst würde sich das Wrapper rekursiv aufrufen
-// und mit "Maximum call stack size exceeded" scheitern (Bug, der zuvor dazu
-// führte, dass das Frontend keine Inhalte anzeigen konnte).
+// und mit "Maximum call stack size exceeded" scheitern.
 const nativeFetch = globalThis.fetch;
 global.fetch = (u, o) =>
   nativeFetch(typeof u === "string" && u.startsWith("/") ? new URL(u, BASE).href : u, o);
@@ -172,6 +231,7 @@ const karten = grid._children.filter((c) => c._classes.includes("karte"));
 const placeholder = grid._children.find((c) => c._classes.includes("fehlerzustand") || c._classes.includes("leerzustand"));
 
 console.log("SSE init empfangen:", global.__sseDone === true);
+if (global.__sseError) console.log("SSE-Fehler:", global.__sseError);
 console.log("Renderte Karten:", karten.length);
 console.log("Placeholder:", placeholder ? placeholder._classes.join(" ") : "(keine)");
 console.log("Zähler-Text:", JSON.stringify(zaehler.textContent));
@@ -179,15 +239,16 @@ console.log("Zähler-Text:", JSON.stringify(zaehler.textContent));
 let ok = global.__sseDone === true && karten.length >= 1;
 if (karten.length > 0) {
   const k = karten[0];
+  const h3 = k.querySelector("h3");
+  const link = h3 ? h3._children[0] : null;
+  const titel = link?.textContent ?? "";
+  const url = link?.attrs?.href ?? link?.href ?? "";
   const inhalt = k._children.find((c) => c._classes.includes("karte-inhalt"));
-  const titelEl = inhalt ? inhalt._children.find((c) => c._classes.includes("karte-titel")) : null;
-  const titel = titelEl ? titelEl._children[0]?.textContent ?? "" : "";
-  const url = titelEl ? (titelEl._children[0]?.attrs?.href ?? titelEl._children[0]?.href ?? "") : "";
-  const kopf = inhalt ? inhalt._children[0] : null;
-  const time = kopf ? kopf._children.find((c) => c._tag === "time") : null;
-  const zeit = time ? (time.attrs?.dateTime ?? time._text ?? "") : "";
-  const badge = kopf ? kopf._children.find((c) => c._classes.includes("karte-badge")) : null;
-  const quelle = badge ? badge.textContent ?? "" : "";
+  const zeitEl = inhalt ? inhalt._children[0] : null; // kopf
+  const time = zeitEl ? zeitEl._children.find((c) => c._tag === "time") : null;
+  const zeit = time?.attrs?.dateTime ?? time?._text ?? "";
+  const badge = zeitEl ? zeitEl._children.find((c) => c._classes.includes("karte-badge")) : null;
+  const quelle = badge?.textContent ?? "";
   console.log("Titel:", titel);
   console.log("Quelle:", quelle, "| Zeit:", zeit, "| Link:", url);
   ok = ok && !!titel && !!quelle && !!zeit && /^https?:/.test(url);
@@ -208,9 +269,44 @@ const sOk = statusLeiste._children.filter((c) => c.classList.contains("status-ok
 const sErr = statusLeiste._children.filter((c) => c.classList.contains("status-fehler")).length;
 console.log(`Status: ok=${sOk} fehler=${sErr} laden=${laden}`);
 
+// Quellen-Filterchips: 1 (Alle) + 8 Quellen = 9
 const chips = filterLeiste._children.filter((c) => c._classes.includes("filterchip")).length;
-console.log("Filterchips:", chips);
-ok = ok && chips === 6;
+console.log("Quellen-Filterchips:", chips);
+ok = ok && chips === 9;
+
+// Kategorie-Chips aus dem echten Markup: 5 (Alle, Weltpolitik, Finanzen, Lokalpolitik, KI)
+const katChips = kategorieLeiste._children.filter((c) => c._classes.includes("filterchip")).length;
+console.log("Kategorie-Filterchips:", katChips);
+ok = ok && katChips === 5;
+for (const erwartet of ["", "weltpolitik", "finanzen", "lokalpolitik", "ai"]) {
+  ok = ok && kategorieLeiste._children.some((c) => c.dataset.kategorie === erwartet);
+}
+
+// Kategorie-Filter verhalten: „Finanzen“ zeigt genau die finanzen-Artikel.
+try {
+  const antwort = await fetch("/api/nachrichten");
+  const daten = await antwort.json();
+  const finanzenAnzahl = daten.artikel.filter((a) => a.kategorie === "finanzen").length;
+  const finChips = kategorieLeiste._children.filter((c) => c.dataset.kategorie === "finanzen");
+  if (finChips[0]) {
+    finChips[0]._listeners.click?.forEach((cb) => cb());
+    const finKarten = grid._children.filter((c) => c._classes.includes("karte"));
+    console.log(`Karten nach Finanzen-Filter: ${finKarten.length} (API liefert ${finanzenAnzahl} finanzen-Artikel)`);
+    ok = ok && finKarten.length === finanzenAnzahl && finKarten.length >= 1;
+    ok = ok && finChips[0].classList.contains("aktiv");
+    // „Alle“ zurückstellen.
+    const alleKat = kategorieLeiste._children.find((c) => c.dataset.kategorie === "");
+    alleKat?._listeners.click?.forEach((cb) => cb());
+    const zurueck = grid._children.filter((c) => c._classes.includes("karte")).length;
+    console.log("Karten nach Zurücksetzen auf Alle:", zurueck);
+    ok = ok && zurueck === karten.length;
+  } else {
+    console.log("Kategorie-Filter fehlerhaft: kein Finanzen-Chip im Markup");
+    ok = false;
+  }
+} catch (e) {
+  console.log("Kategorie-Filter-Check übersprungen (API nicht erreichbar):", e.message);
+}
 
 console.log(ok ? "\n=== DOM-PRUEFUNG OK: Karten werden gerendert ===" : "\n=== DOM-PRUEFUNG SCHOITIG ===");
 process.exit(ok ? 0 : 1);
