@@ -114,6 +114,16 @@ alleChip._classes.push("filterchip", "aktiv");
 alleChip.dataset["quelle"] = "";
 filterLeiste.appendChild(alleChip);
 
+// Kategorie-Filter (statisches Markup aus index.html): 5 Chips.
+const kategorieLeiste = makeEl("div");
+kategorieLeiste._classes.push("filterleiste");
+for (const [klasse, kat] of [["aktiv", ""], ["", "weltpolitik"], ["", "finanzen"], ["", "lokalpolitik"], ["", "ai"]]) {
+  const chip = makeEl("button");
+  chip._classes.push("filterchip", "kategorie", ...(klasse ? [klasse] : []));
+  chip.dataset["kategorie"] = kat;
+  kategorieLeiste.appendChild(chip);
+}
+
 const grid = makeEl("section");
 grid._classes.push("newsgrid");
 const suchfeld = makeEl("input");
@@ -121,6 +131,7 @@ const zaehler = makeEl("p");
 const byId = {
   newsgrid: grid,
   quellenfilter: filterLeiste,
+  kategoriefilter: kategorieLeiste,
   quellenstatus: statusLeiste,
   suchfeld,
   "zähler": zaehler
@@ -240,8 +251,29 @@ console.log(`Status: ok=${sOk} fehler=${sErr} laden=${laden}`);
 
 // Filterchips: 1 (Alle) + 8 Quellen = 9
 const chips = filterLeiste._children.filter((c) => c._classes.includes("filterchip")).length;
-console.log("Filterchips:", chips);
+console.log("Quellen-Filterchips:", chips);
 ok = ok && chips === 9;
+
+// Kategorie-Chips: 5 (Alle, Weltpolitik, Finanzen, Lokalpolitik, KI)
+const katChips = kategorieLeiste._children.filter((c) => c._classes.includes("filterchip")).length;
+console.log("Kategorie-Filterchips:", katChips);
+ok = ok && katChips === 5;
+
+// Kategorie-Filter verhalten: „Finanzen“ einschränkt das Grid.
+const finChips = kategorieLeiste._children.filter((c) => c.dataset.kategorie === "finanzen");
+if (finChips[0]) {
+  finChips[0]._listeners.click?.forEach((cb) => cb());
+  const finKarten = grid._children.filter((c) => c._classes.includes("karte"));
+  console.log("Karten nach Finanzen-Filter:", finKarten.length);
+  // „Alle“ zurückstellen.
+  const alleKat = kategorieLeiste._children.find((c) => c.dataset.kategorie === "");
+  alleKat?._listeners.click?.forEach((cb) => cb());
+  const zurueck = grid._children.filter((c) => c._classes.includes("karte")).length;
+  console.log("Karten nach Zurücksetzen auf Alle:", zurueck);
+  ok = ok && zurueck === karten.length;
+} else {
+  ok = false;
+}
 
 console.log(ok ? "\n=== DOM-PRÜFUNG OK: Karten werden gerendert ===" : "\n=== DOM-PRÜFUNG SCHOITIG ===");
 process.exit(ok ? 0 : 1);
