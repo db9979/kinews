@@ -169,56 +169,326 @@
       "beschreibung": "Vom LLM-Codeassistenten bis zum Bildgenerator: die Tools der Woche im Überblick.",
       "bild": null,
       "kategorie": "lokalpolitik"
+    },
+    {
+      "id": "340614cb1d4599fcf910",
+      "url": "https://techcrunch.com/2026/11/20/daniel-ek-backs-ai-researchers-fusion-power-startup-heres-what-theyre-building/",
+      "titel": "Daniel Ek backs AI researcher’s fusion power startup. Here’s what they’re building.",
+      "quelle": "techcrunch",
+      "zeit": "2026-11-20T19:53:41.000Z",
+      "beschreibung": "Spotify founder Daniel Ek is backing Europa Fusion, a fusion power startup founded by an AI researcher. Here's what the startup is building.",
+      "bild": null,
+      "kategorie": "ai"
+    },
+    {
+      "id": "d6bff5841b5a64e74379",
+      "url": "https://techcrunch.com/2026/11/20/ai-claimed-a-solution-to-the-167-year-old-riemann-hypothesis-and-a-human-did-too/",
+      "titel": "AI claimed a solution to the 167-year-old Riemann Hypothesis — and a human did, too",
+      "quelle": "techcrunch",
+      "zeit": "2026-11-20T19:32:08.000Z",
+      "beschreibung": "Mathematicians are having their minds blown by the latest AI-driven result — and there's a competing human solution, too.",
+      "bild": null,
+      "kategorie": "ai"
+    },
+    {
+      "id": "7d8981ef547621735a99",
+      "url": "https://techcrunch.com/2026/11/20/6-ai-powered-gadgets-that-could-make-your-home-office-smarter/",
+      "titel": "Six AI-powered gadgets that could make your home office smarter",
+      "quelle": "techcrunch",
+      "zeit": "2026-11-20T14:00:00.000Z",
+      "beschreibung": "From notetakers to webcams, here are six AI-powered gadgets to upgrade your workspace.",
+      "bild": null,
+      "kategorie": "ai"
+    },
+    {
+      "id": "8f4728ffc5b95bfc4916",
+      "url": "https://techcrunch.com/2026/11/19/apple-may-be-developing-its-own-ai-agent-that-runs-your-mac/",
+      "titel": "Apple may be developing its own AI agent that runs your Mac",
+      "quelle": "techcrunch",
+      "zeit": "2026-11-20T00:56:01.000Z",
+      "beschreibung": "The iPhone maker appears to be building agents that can compete with the likes of Meta Muse, Instinct, Claude, and OpenAI Dots.",
+      "bild": null,
+      "kategorie": "ai"
+    },
+    {
+      "id": "f1dd0bea0b97e4abfbaa",
+      "url": "https://techcrunch.com/2026/11/19/anthropics-7-founders-cashed-out-nearly-2b-in-record-breaking-ipo/",
+      "titel": "Anthropic’s 7 founders cashed out nearly $2B in record-breaking IPO",
+      "quelle": "techcrunch",
+      "zeit": "2026-11-20T00:43:50.000Z",
+      "beschreibung": "At the upgraded $83/share IPO price, Anthropic's seven founders each pocketed $280 million, while the company nabbed nearly $105 billion.",
+      "bild": null,
+      "kategorie": "ai"
+    },
+    {
+      "id": "6f0f2d869f0fe635e8e9",
+      "url": "https://techcrunch.com/2026/11/19/metas-new-muse-charm-device-may-cost-300/",
+      "titel": "Meta’s new Muse Charm device may cost $300",
+      "quelle": "techcrunch",
+      "zeit": "2026-11-19T21:58:06.000Z",
+      "beschreibung": "Meta hasn't denied the reporting from The Information, saying only that it will \"have more to share soon\" about its upcoming AI wearable.",
+      "bild": null,
+      "kategorie": "ai"
+    },
+    {
+      "id": "f2dddf2ea7d8bc56ba8f",
+      "url": "https://techcrunch.com/2026/11/19/these-tech-outages-are-giving-y2k-ai-agent-style/",
+      "titel": "These tech outages are giving Y2K, AI agent style",
+      "quelle": "techcrunch",
+      "zeit": "2026-11-19T21:42:31.000Z",
+      "beschreibung": "Are the recent outages in the airline booking systems, banking platforms, and productivity platforms really a coincidence? There's actually likely something deeper going on, cybersecurity experts say.",
+      "bild": null,
+      "kategorie": "ai"
+    },
+    {
+      "id": "423b8c753c11c2429c2e",
+      "url": "https://techcrunch.com/2026/11/19/nvidia-ceo-jensen-huangs-affair-with-alleged-chinese-spy-a-timeline/",
+      "titel": "The unfolding Jensen Huang scandal: a timeline",
+      "quelle": "techcrunch",
+      "zeit": "2026-11-19T20:18:49.000Z",
+      "beschreibung": "Jensen Huang has resigned from Nvidia following an affair, which could have ramifications for national security as the U.S. and China race to develop the most advanced AI infrastructure.",
+      "bild": null,
+      "kategorie": "ai"
+    },
+    {
+      "id": "2ad2190c7ade6b93c369",
+      "url": "https://techcrunch.com/2026/11/19/anthropics-ipo-could-deliver-156-billion-to-charity/",
+      "titel": "Anthropic’s IPO could deliver $156B to charity",
+      "quelle": "techcrunch",
+      "zeit": "2026-11-19T19:10:45.000Z",
+      "beschreibung": "At a stock price of $95, the frontier lab's Public Benefit Foundation, its employee donations, and the company's match tot up to $156 billion.",
+      "bild": null,
+      "kategorie": "ai"
+    },
+    {
+      "id": "1054662f25c3d852e57e",
+      "url": "https://techcrunch.com/2026/11/19/google-gives-gemini-the-ability-to-use-your-mac-for-you/",
+      "titel": "Google gives Gemini the ability to use your Mac for you",
+      "quelle": "techcrunch",
+      "zeit": "2026-11-19T18:09:11.000Z",
+      "beschreibung": "Google's latest update to Gemini brings an AI agent to the Mac that can organize files, fill out forms, and tackle multistep workflows.",
+      "bild": null,
+      "kategorie": "ai"
+    },
+    {
+      "id": "2919f418f3f516824d26",
+      "url": "https://techcrunch.com/2026/11/19/metas-ai-agent-muse-is-mixing-up-conversations-and-exposing-private-data-report-says/",
+      "titel": "Meta’s AI agent Muse is mixing up conversations and could be exposing private data, report says",
+      "quelle": "techcrunch",
+      "zeit": "2026-11-19T17:38:40.000Z",
+      "beschreibung": "In some of these instances, employees said Muse surfaced messages about childcare requests they never made, career advice they never asked for, product orders they never placed, and bank account balances that didn't belong to them.",
+      "bild": null,
+      "kategorie": "ai"
+    },
+    {
+      "id": "d680d8751ecd7c4c1e56",
+      "url": "https://techcrunch.com/2026/11/19/anthropic-hits-nasdaq-exchanges-at-110-27-above-ipo-price/",
+      "titel": "Anthropic hits Nasdaq exchanges at $111, 33% above IPO price",
+      "quelle": "techcrunch",
+      "zeit": "2026-11-19T16:59:23.000Z",
+      "beschreibung": "Anthropic's IPO price was set at $83, representing more than $80 billion in new capital raised.",
+      "bild": null,
+      "kategorie": "ai"
+    },
+    {
+      "id": "b80c1a82c17c25525281",
+      "url": "https://techcrunch.com/2026/11/19/at-nasdaq-opening-bell-anthropic-ceo-recommits-to-pacing-ai-development/",
+      "titel": "At Nasdaq opening bell, Anthropic CEO recommits to pacing AI development",
+      "quelle": "techcrunch",
+      "zeit": "2026-11-19T16:19:41.000Z",
+      "beschreibung": "In his Nasdaq opening bell speech, Dario Amodei reiterated Anthropic's commitment to pacing AI development, regardless of business or political pressure.",
+      "bild": null,
+      "kategorie": "ai"
+    },
+    {
+      "id": "c990fb12100073c5af34",
+      "url": "https://techcrunch.com/2026/11/19/anthropics-ipo-puts-ais-circular-financing-boom-to-the-test/",
+      "titel": "Anthropic’s IPO puts AI’s circular financing boom to the test",
+      "quelle": "techcrunch",
+      "zeit": "2026-11-19T14:54:39.000Z",
+      "beschreibung": "Anthropic faces enormous compute commitments as it goes public, but its biggest infrastructure partners, including Amazon and Google, could continue profiting from AI even if Anthropic loses its lead.",
+      "bild": null,
+      "kategorie": "ai"
+    },
+    {
+      "id": "a8022fb06095c478eb24",
+      "url": "https://techcrunch.com/2026/11/18/microsoft-ceo-satya-nadella-explains-why-he-asked-60k-employees-to-quit/",
+      "titel": "Microsoft CEO Satya Nadella explains why he asked 60K employees to quit",
+      "quelle": "techcrunch",
+      "zeit": "2026-11-19T00:42:56.000Z",
+      "beschreibung": "Microsoft CEO Satya Nadella explained why he offered buyouts to 60,000 of his employees in October, essentially urging them to voluntarily quit, rather than reducing the workforce via another massive layoff. The short answer is AI, but not in the way you might expect.",
+      "bild": null,
+      "kategorie": "ai"
+    },
+    {
+      "id": "44255eb49d7cccbd7d19",
+      "url": "https://techcrunch.com/2026/11/18/amidst-fears-of-ai-cyberattacks-satya-nadella-says-lots-of-critical-infrastructure-is-unpatchable/",
+      "titel": "Amidst fears of AI cyberattacks, Satya Nadella says lots of critical infrastructure is ‘unpatchable’",
+      "quelle": "techcrunch",
+      "zeit": "2026-11-18T23:45:00.000Z",
+      "beschreibung": "The Microsoft CEO downplayed the recent Outlook outage while noting that AI was causing both opportunities and new challenges for securing much of the connected world.",
+      "bild": null,
+      "kategorie": "ai"
+    },
+    {
+      "id": "0e789c02d67386aaea91",
+      "url": "https://arstechnica.com/security/2026/11/grok-bot-took-unapproved-actions-ignored-orders-to-stop-and-then-denied-it/",
+      "titel": "Grok Bot took unapproved actions, ignored orders to stop, and then denied it",
+      "quelle": "arstechnica",
+      "zeit": "2026-11-17T14:00:29.000Z",
+      "beschreibung": "AI agent takes unapproved actions even when laptop lid is closed and told not to.",
+      "bild": "https://cdn.arstechnica.net/wp-content/uploads/2026/11/grok-bot-barfs-code-1152x648.jpg",
+      "kategorie": "ai"
+    },
+    {
+      "id": "84f741940fbdaff2c7e2",
+      "url": "https://arstechnica.com/tech-policy/2026/11/shareholders-sue-intel-its-ceo-and-cfo-after-stock-drops-28-6-percent-in-one-day/",
+      "titel": "Shareholders sue Intel, its CEO, and CFO after stock drops 28.6 percent in one day",
+      "quelle": "arstechnica",
+      "zeit": "2026-11-16T20:37:47.000Z",
+      "beschreibung": "The PC sales slump \"more than offset” AI boom gains, shareholders say.",
+      "bild": "https://cdn.arstechnica.net/wp-content/uploads/2026/11/GettyImages-2231573847-1024x648.jpg",
+      "kategorie": "ai"
+    },
+    {
+      "id": "a5eef3cf57a4e41068d1",
+      "url": "https://arstechnica.com/security/2026/11/chainalysis-says-hackers-stole-credentials-and-tokens-for-all-of-its-customers/",
+      "titel": "Chainalysis says hackers stole credentials and tokens for all of its customers",
+      "quelle": "arstechnica",
+      "zeit": "2026-11-06T20:56:41.000Z",
+      "beschreibung": "Company said a \"multifront cyberattack\" included AI agents and an on-path data snatch.",
+      "bild": "https://cdn.arstechnica.net/wp-content/uploads/2022/08/getty-blockchain-1152x648.jpg",
+      "kategorie": "ai"
+    },
+    {
+      "id": "ce0cce9f3bc5563cb51b",
+      "url": "https://arstechnica.com/security/2026/10/anthropic-vs-code-extension-on-cursor-backdoored-for-nearly-12-hours/",
+      "titel": "Anthropic VS code extension on Cursor backdoored for nearly 12 hours",
+      "quelle": "arstechnica",
+      "zeit": "2026-10-30T21:09:54.000Z",
+      "beschreibung": "It's still unknown how attackers got access to Anthropic's verified Cursor account.",
+      "bild": "https://cdn.arstechnica.net/wp-content/uploads/2022/05/caution-tape-1000x648.jpeg",
+      "kategorie": "ai"
+    },
+    {
+      "id": "3a0cb236fd3220dadae4",
+      "url": "https://www.theverge.com/policy/1038892/trump-foreign-data-centers-tax",
+      "titel": "Trump threatens ‘tremendous tax’ for moving AI data centers outside the US",
+      "quelle": "theverge",
+      "zeit": "2026-11-20T18:50:19.000Z",
+      "beschreibung": "President Donald Trump promised to put a \"tremendous tax\" on companies that build data centers outside of the US, even as states and cities around the country are placing restrictions on new applications to build them. \"We're not going to allow our companies to build data centers outside of our country,\" Trump said at a […]",
+      "bild": null,
+      "kategorie": "ai"
+    },
+    {
+      "id": "859ee3ec8c206bcf248f",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1010051/anthropic-riemann-hypothesis-millennium-prize-problem",
+      "titel": "Anthropic mathematician claims to have solved prestigious Millennium Prize problem with Claude",
+      "quelle": "theverge",
+      "zeit": "2026-11-20T16:34:13.000Z",
+      "beschreibung": "Anthropic mathematician Levent Alpöge claims he has proved the Riemann hypothesis, one of mathematics's most notoriously difficult problems, with the help of Claude, cracking a puzzle that has eluded some of the world's best mathematicians for decades. If verified, it would mark yet another seismic achievement for AI in mathematics and add to the upheaval […]",
+      "bild": null,
+      "kategorie": "ai"
+    },
+    {
+      "id": "01449c61c8b86a227cd1",
+      "url": "https://www.technologyreview.com/2026/11/20/1149399/the-most-misunderstood-graph-in-ai-just-got-a-major-update/",
+      "titel": "The most misunderstood graph in AI just got a major update",
+      "quelle": "mittr",
+      "zeit": "2026-11-20T18:15:15.000Z",
+      "beschreibung": "A new report from the AI evaluation nonprofit METR finds that some AI capabilities are continuing to improve along an exponential trajectory—but it also indicates that models aren’t quite as good at tasks that require judgment as they are at coding. The report is an update to the organization’s time horizon plot, which was widely…",
+      "bild": null,
+      "kategorie": "ai"
+    },
+    {
+      "id": "0011ae0145f003e82528",
+      "url": "https://www.technologyreview.com/2026/11/19/1148979/the-download-liver-kept-alive-sila-battery-deal-ai-hype/",
+      "titel": "The Download: a living liver, a billion-dollar battery deal, and AI hype",
+      "quelle": "mittr",
+      "zeit": "2026-11-19T13:10:00.000Z",
+      "beschreibung": "This is today’s edition of The Download, our weekday newsletter that provides a daily dose of what’s going on in the world of technology. A human liver has been kept alive outside the body for a record seven weeks Researchers in Australia claim they’ve kept a human liver alive on life support outside the body…",
+      "bild": null,
+      "kategorie": "ai"
+    },
+    {
+      "id": "bb3ee1cf50e29f40aac7",
+      "url": "https://www.technologyreview.com/2026/11/18/1148650/ai-hype-index-ai-is-everywhere/",
+      "titel": "The AI Hype Index: AI is everywhere",
+      "quelle": "mittr",
+      "zeit": "2026-11-18T14:42:44.000Z",
+      "beschreibung": "Like a nasty rash, AI seems to spread everywhere. Google crams AI Overviews down your throat even though it costs the company billions of dollars in lost ad revenue. Leave your apartment, and you might pass two people heaving an AI-powered humanoid robot up the stairs to clean someone’s rooms. Go to the supermarket, and…",
+      "bild": null,
+      "kategorie": "ai"
+    },
+    {
+      "id": "5fe5c48115f1c83ac35f",
+      "url": "https://www.technologyreview.com/2026/11/18/1148845/the-download-ai-learns-to-smell-hydropower-struggles/",
+      "titel": "The Download: AI learns to smell and hydropower struggles",
+      "quelle": "mittr",
+      "zeit": "2026-11-18T13:10:00.000Z",
+      "beschreibung": "This is today’s edition of The Download, our weekday newsletter that provides a daily dose of what’s going on in the world of technology. This smell startup says its AI nose is as good as a human’s In a New Jersey lab, researchers are trying to sniff every odor on Earth. Their careful notes—“nutty,” “peachy,”…",
+      "bild": null,
+      "kategorie": "ai"
+    },
+    {
+      "id": "d1dd49b4f83d7a93a977",
+      "url": "https://www.technologyreview.com/2026/11/18/1148816/smell-startup-osmo-ai-nose-good-as-humans/",
+      "titel": "This smell startup says its AI nose is as good as a human’s",
+      "quelle": "mittr",
+      "zeit": "2026-11-18T10:20:30.000Z",
+      "beschreibung": "In a lab near Newark Airport in New Jersey, a team of around 30 experienced human sniffers are slowly working their way through every odor on Earth. Their careful notes—“nutty,” “peachy,” “marine”—are cross-referenced with a chemical analysis to create a rich set of training data for what AI startup Osmo calls the world’s first foundation…",
+      "bild": null,
+      "kategorie": "ai"
     }
   ],
   "status": {
     "theverge": {
       "ok": true,
-      "letztePruefung": "2026-11-20T20:27:02.819Z",
+      "letztePruefung": "2026-11-20T20:52:58.042Z",
       "fehler": null,
-      "artikelGefunden": 3
+      "artikelGefunden": 2
     },
     "techcrunch": {
       "ok": true,
-      "letztePruefung": "2026-11-20T20:27:02.819Z",
+      "letztePruefung": "2026-11-20T20:52:57.919Z",
       "fehler": null,
-      "artikelGefunden": 3
+      "artikelGefunden": 16
     },
     "arstechnica": {
       "ok": true,
-      "letztePruefung": "2026-11-20T20:27:02.819Z",
+      "letztePruefung": "2026-11-20T20:52:57.964Z",
       "fehler": null,
-      "artikelGefunden": 3
+      "artikelGefunden": 4
     },
     "venturebeat": {
-      "ok": true,
-      "letztePruefung": "2026-11-20T20:27:02.819Z",
-      "fehler": null,
-      "artikelGefunden": 3
+      "ok": false,
+      "letztePruefung": "2026-11-20T20:52:57.946Z",
+      "fehler": "Feed-Status 429 Too Many Requests",
+      "artikelGefunden": 0
     },
     "mittr": {
       "ok": true,
-      "letztePruefung": "2026-11-20T20:27:02.819Z",
+      "letztePruefung": "2026-11-20T20:52:58.109Z",
       "fehler": null,
-      "artikelGefunden": 3
+      "artikelGefunden": 5
     },
     "zeitwelt": {
-      "ok": true,
-      "letztePruefung": "2026-11-20T20:27:02.819Z",
-      "fehler": null,
-      "artikelGefunden": 3
+      "ok": false,
+      "letztePruefung": "2026-11-20T20:52:58.106Z",
+      "fehler": "Feed-Status 403",
+      "artikelGefunden": 0
     },
     "tagesschau-wirtschaft": {
-      "ok": true,
-      "letztePruefung": "2026-11-20T20:27:02.820Z",
-      "fehler": null,
-      "artikelGefunden": 3
+      "ok": false,
+      "letztePruefung": "2026-11-20T20:52:58.093Z",
+      "fehler": "Feed-Status 404 Not Found",
+      "artikelGefunden": 0
     },
     "tagesschau-politik": {
-      "ok": true,
-      "letztePruefung": "2026-11-20T20:27:02.820Z",
-      "fehler": null,
-      "artikelGefunden": 3
+      "ok": false,
+      "letztePruefung": "2026-11-20T20:52:58.093Z",
+      "fehler": "Feed-Status 404 Not Found",
+      "artikelGefunden": 0
     }
   }
 }
