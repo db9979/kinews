@@ -1,12 +1,21 @@
-2026-11-20T21:46:43.567Z [Server] KiNews laeuft auf http://localhost:3229
-2026-11-20T21:46:43.567Z [Server] Intervall: 5 min, Feed-Timeout: 8000 ms, Daten: /Users/db/Library/Application Support/software-factory/worktrees/23e82bbe779a/tmp/e2e-daten
-2026-11-20T21:46:43.570Z [Scheduler] The Verge AI: 3 neue Artikel
-2026-11-20T21:46:43.570Z [Scheduler] TechCrunch AI: 2 neue Artikel
-2026-11-20T21:46:43.570Z [Scheduler] Ars Technica AI: 2 neue Artikel
-2026-11-20T21:46:43.571Z [Scheduler] VentureBeat AI: 2 neue Artikel
-2026-11-20T21:46:43.571Z [Scheduler] MIT Technology Review: 2 neue Artikel
-2026-11-20T21:46:43.572Z [Scheduler] Zeit Welt: 2 neue Artikel
-2026-11-20T21:46:43.572Z [Scheduler] Tagesschau Wirtschaft: 2 neue Artikel
-2026-11-20T21:46:43.572Z [Scheduler] Tagesschau Politik: 2 neue Artikel
-2026-11-20T21:46:43.572Z [Scheduler] Durchlauf fertig in 5 ms (0 unerwartete Fehler)
-2026-11-20T21:46:57.420Z [Server] Beende…
+node:events:497
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::3229
+    at Server.setupListenHandle [as _listen2] (node:net:1941:16)
+    at listenInCluster (node:net:1998:12)
+    at Server.listen (node:net:2103:7)
+    at Function.listen (/Users/db/Library/Application Support/software-factory/worktrees/23e82bbe779a/node_modules/express/lib/application.js:635:24)
+    at file:///Users/db/Library/Application%20Support/software-factory/worktrees/23e82bbe779a/server.js:125:16
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1977:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:89:21) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 3229
+}
+
+Node.js v22.23.1
