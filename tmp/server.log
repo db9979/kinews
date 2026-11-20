@@ -1,0 +1,12 @@
+2026-11-20T21:46:43.567Z [Server] KiNews laeuft auf http://localhost:3229
+2026-11-20T21:46:43.567Z [Server] Intervall: 5 min, Feed-Timeout: 8000 ms, Daten: /Users/db/Library/Application Support/software-factory/worktrees/23e82bbe779a/tmp/e2e-daten
+2026-11-20T21:46:43.570Z [Scheduler] The Verge AI: 3 neue Artikel
+2026-11-20T21:46:43.570Z [Scheduler] TechCrunch AI: 2 neue Artikel
+2026-11-20T21:46:43.570Z [Scheduler] Ars Technica AI: 2 neue Artikel
+2026-11-20T21:46:43.571Z [Scheduler] VentureBeat AI: 2 neue Artikel
+2026-11-20T21:46:43.571Z [Scheduler] MIT Technology Review: 2 neue Artikel
+2026-11-20T21:46:43.572Z [Scheduler] Zeit Welt: 2 neue Artikel
+2026-11-20T21:46:43.572Z [Scheduler] Tagesschau Wirtschaft: 2 neue Artikel
+2026-11-20T21:46:43.572Z [Scheduler] Tagesschau Politik: 2 neue Artikel
+2026-11-20T21:46:43.572Z [Scheduler] Durchlauf fertig in 5 ms (0 unerwartete Fehler)
+2026-11-20T21:46:57.420Z [Server] Beende…

@@ -1,0 +1,224 @@
+{
+  "artikel": [
+    {
+      "id": "15781d5f4e89c0b425ac",
+      "url": "https://offline.kinews.example/theverge/artikel-1",
+      "titel": "Forscher von The Verge AI präsentieren durchbruchsreiche AI-Technologie",
+      "quelle": "theverge",
+      "zeit": "2025-06-09T10:00:00.000Z",
+      "beschreibung": "Ein Report über die neuesten Entwicklungen in artificial intelligence und machine learning.",
+      "bild": "https://picsum.photos/seed/kinews-theverge/640/360",
+      "kategorie": "ai"
+    },
+    {
+      "id": "f831a749fc66a7609f0b",
+      "url": "https://offline.kinews.example/theverge/artikel-2",
+      "titel": "Die fünf wichtigsten AI-Tools laut The Verge AI",
+      "quelle": "theverge",
+      "zeit": "2025-06-08T18:30:00.000Z",
+      "beschreibung": "Vom LLM-Codeassistenten bis zum Bildgenerator: die Tools der Woche im Überblick.",
+      "bild": null,
+      "kategorie": "ai"
+    },
+    {
+      "id": "854b39514dd46478c657",
+      "url": "https://offline.kinews.example/theverge/live-1",
+      "titel": "Live-Update 1: Neue AI-Entwicklungen im Minutentakt",
+      "quelle": "theverge",
+      "zeit": "2026-11-20T21:46:43.000Z",
+      "beschreibung": "Automatisch erzeugter Live-Beitrag (Aufruf 1) zu AI und artificial intelligence.",
+      "bild": null,
+      "kategorie": "ai"
+    },
+    {
+      "id": "d696c0c4d2169d9839c9",
+      "url": "https://offline.kinews.example/techcrunch/artikel-1",
+      "titel": "Forscher von TechCrunch AI präsentieren durchbruchsreiche AI-Technologie",
+      "quelle": "techcrunch",
+      "zeit": "2025-06-09T10:00:00.000Z",
+      "beschreibung": "Ein Report über die neuesten Entwicklungen in artificial intelligence und machine learning.",
+      "bild": "https://picsum.photos/seed/kinews-techcrunch/640/360",
+      "kategorie": "ai"
+    },
+    {
+      "id": "7a5f6a2dc7a5a9de9dd0",
+      "url": "https://offline.kinews.example/techcrunch/artikel-2",
+      "titel": "Die fünf wichtigsten AI-Tools laut TechCrunch AI",
+      "quelle": "techcrunch",
+      "zeit": "2025-06-08T18:30:00.000Z",
+      "beschreibung": "Vom LLM-Codeassistenten bis zum Bildgenerator: die Tools der Woche im Überblick.",
+      "bild": null,
+      "kategorie": "ai"
+    },
+    {
+      "id": "4516379463c472d7bbbd",
+      "url": "https://offline.kinews.example/arstechnica/artikel-1",
+      "titel": "Forscher von Ars Technica AI präsentieren durchbruchsreiche AI-Technologie",
+      "quelle": "arstechnica",
+      "zeit": "2025-06-09T10:00:00.000Z",
+      "beschreibung": "Ein Report über die neuesten Entwicklungen in artificial intelligence und machine learning.",
+      "bild": "https://picsum.photos/seed/kinews-arstechnica/640/360",
+      "kategorie": "ai"
+    },
+    {
+      "id": "be1c229c154b9997974b",
+      "url": "https://offline.kinews.example/arstechnica/artikel-2",
+      "titel": "Die fünf wichtigsten AI-Tools laut Ars Technica AI",
+      "quelle": "arstechnica",
+      "zeit": "2025-06-08T18:30:00.000Z",
+      "beschreibung": "Vom LLM-Codeassistenten bis zum Bildgenerator: die Tools der Woche im Überblick.",
+      "bild": null,
+      "kategorie": "ai"
+    },
+    {
+      "id": "faebc633ec1482cad3d9",
+      "url": "https://offline.kinews.example/venturebeat/artikel-1",
+      "titel": "Forscher von VentureBeat AI präsentieren durchbruchsreiche AI-Technologie",
+      "quelle": "venturebeat",
+      "zeit": "2025-06-09T10:00:00.000Z",
+      "beschreibung": "Ein Report über die neuesten Entwicklungen in artificial intelligence und machine learning.",
+      "bild": "https://picsum.photos/seed/kinews-venturebeat/640/360",
+      "kategorie": "ai"
+    },
+    {
+      "id": "f2bfefb6cd5f99a1f454",
+      "url": "https://offline.kinews.example/venturebeat/artikel-2",
+      "titel": "Die fünf wichtigsten AI-Tools laut VentureBeat AI",
+      "quelle": "venturebeat",
+      "zeit": "2025-06-08T18:30:00.000Z",
+      "beschreibung": "Vom LLM-Codeassistenten bis zum Bildgenerator: die Tools der Woche im Überblick.",
+      "bild": null,
+      "kategorie": "ai"
+    },
+    {
+      "id": "45a8e634ab9209affea3",
+      "url": "https://offline.kinews.example/mittr/artikel-1",
+      "titel": "Forscher von MIT Technology Review präsentieren durchbruchsreiche AI-Technologie",
+      "quelle": "mittr",
+      "zeit": "2025-06-09T10:00:00.000Z",
+      "beschreibung": "Ein Report über die neuesten Entwicklungen in artificial intelligence und machine learning.",
+      "bild": "https://picsum.photos/seed/kinews-mittr/640/360",
+      "kategorie": "ai"
+    },
+    {
+      "id": "f50e07119ea53a0066aa",
+      "url": "https://offline.kinews.example/mittr/artikel-2",
+      "titel": "Die fünf wichtigsten AI-Tools laut MIT Technology Review",
+      "quelle": "mittr",
+      "zeit": "2025-06-08T18:30:00.000Z",
+      "beschreibung": "Vom LLM-Codeassistenten bis zum Bildgenerator: die Tools der Woche im Überblick.",
+      "bild": null,
+      "kategorie": "ai"
+    },
+    {
+      "id": "580a3b0984d2c0c5d858",
+      "url": "https://offline.kinews.example/zeitwelt/artikel-1",
+      "titel": "Forscher von Zeit Welt präsentieren durchbruchsreiche AI-Technologie",
+      "quelle": "zeitwelt",
+      "zeit": "2025-06-09T10:00:00.000Z",
+      "beschreibung": "Ein Report über die neuesten Entwicklungen in artificial intelligence und machine learning.",
+      "bild": "https://picsum.photos/seed/kinews-zeitwelt/640/360",
+      "kategorie": "weltpolitik"
+    },
+    {
+      "id": "41fb824d3c6cdda916fc",
+      "url": "https://offline.kinews.example/zeitwelt/artikel-2",
+      "titel": "Die fünf wichtigsten AI-Tools laut Zeit Welt",
+      "quelle": "zeitwelt",
+      "zeit": "2025-06-08T18:30:00.000Z",
+      "beschreibung": "Vom LLM-Codeassistenten bis zum Bildgenerator: die Tools der Woche im Überblick.",
+      "bild": null,
+      "kategorie": "weltpolitik"
+    },
+    {
+      "id": "909b24ca1ecab56c75ce",
+      "url": "https://offline.kinews.example/tagesschau-wirtschaft/artikel-1",
+      "titel": "Forscher von Tagesschau Wirtschaft präsentieren durchbruchsreiche AI-Technologie",
+      "quelle": "tagesschau-wirtschaft",
+      "zeit": "2025-06-09T10:00:00.000Z",
+      "beschreibung": "Ein Report über die neuesten Entwicklungen in artificial intelligence und machine learning.",
+      "bild": "https://picsum.photos/seed/kinews-tagesschau-wirtschaft/640/360",
+      "kategorie": "finanzen"
+    },
+    {
+      "id": "49c0b339150c6d7c7659",
+      "url": "https://offline.kinews.example/tagesschau-wirtschaft/artikel-2",
+      "titel": "Die fünf wichtigsten AI-Tools laut Tagesschau Wirtschaft",
+      "quelle": "tagesschau-wirtschaft",
+      "zeit": "2025-06-08T18:30:00.000Z",
+      "beschreibung": "Vom LLM-Codeassistenten bis zum Bildgenerator: die Tools der Woche im Überblick.",
+      "bild": null,
+      "kategorie": "finanzen"
+    },
+    {
+      "id": "b2b0c9360181454db0d7",
+      "url": "https://offline.kinews.example/tagesschau-politik/artikel-1",
+      "titel": "Forscher von Tagesschau Politik präsentieren durchbruchsreiche AI-Technologie",
+      "quelle": "tagesschau-politik",
+      "zeit": "2025-06-09T10:00:00.000Z",
+      "beschreibung": "Ein Report über die neuesten Entwicklungen in artificial intelligence und machine learning.",
+      "bild": "https://picsum.photos/seed/kinews-tagesschau-politik/640/360",
+      "kategorie": "lokalpolitik"
+    },
+    {
+      "id": "395c71bf6e38fabac229",
+      "url": "https://offline.kinews.example/tagesschau-politik/artikel-2",
+      "titel": "Die fünf wichtigsten AI-Tools laut Tagesschau Politik",
+      "quelle": "tagesschau-politik",
+      "zeit": "2025-06-08T18:30:00.000Z",
+      "beschreibung": "Vom LLM-Codeassistenten bis zum Bildgenerator: die Tools der Woche im Überblick.",
+      "bild": null,
+      "kategorie": "lokalpolitik"
+    }
+  ],
+  "status": {
+    "theverge": {
+      "ok": true,
+      "letztePruefung": "2026-11-20T21:46:43.570Z",
+      "fehler": null,
+      "artikelGefunden": 3
+    },
+    "techcrunch": {
+      "ok": true,
+      "letztePruefung": "2026-11-20T21:46:43.570Z",
+      "fehler": null,
+      "artikelGefunden": 3
+    },
+    "arstechnica": {
+      "ok": true,
+      "letztePruefung": "2026-11-20T21:46:43.570Z",
+      "fehler": null,
+      "artikelGefunden": 3
+    },
+    "venturebeat": {
+      "ok": true,
+      "letztePruefung": "2026-11-20T21:46:43.571Z",
+      "fehler": null,
+      "artikelGefunden": 3
+    },
+    "mittr": {
+      "ok": true,
+      "letztePruefung": "2026-11-20T21:46:43.571Z",
+      "fehler": null,
+      "artikelGefunden": 3
+    },
+    "zeitwelt": {
+      "ok": true,
+      "letztePruefung": "2026-11-20T21:46:43.572Z",
+      "fehler": null,
+      "artikelGefunden": 3
+    },
+    "tagesschau-wirtschaft": {
+      "ok": true,
+      "letztePruefung": "2026-11-20T21:46:43.572Z",
+      "fehler": null,
+      "artikelGefunden": 3
+    },
+    "tagesschau-politik": {
+      "ok": true,
+      "letztePruefung": "2026-11-20T21:46:43.572Z",
+      "fehler": null,
+      "artikelGefunden": 3
+    }
+  }
+}

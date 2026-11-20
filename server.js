@@ -24,14 +24,14 @@ const log = (nachricht) => console.log(new Date().toISOString(), nachricht);
 const speicher = new Speicher(konfig.dataDir, { maxArtikel: konfig.maxArtikel });
 const ereignisse = new EventBus();
 
-// Quellen filtern, falls QUELLEN_IDS gesetzt ist (Default: alle fünf).
+// Quellen filtern, falls QUELLEN_IDS gesetzt ist (Default: alle acht).
 let aktiveQuellen = QUELLEN;
 const quelleIds = process.env.QUELLEN_IDS;
 if (quelleIds) {
   const ids = quelleIds.split(",").map((s) => s.trim()).filter(Boolean);
   aktiveQuellen = QUELLEN.filter((q) => ids.includes(q.id));
   if (aktiveQuellen.length === 0) {
-    log("[Warnung] QUELLEN_IDS nennt keine bekannte Quelle – nutze alle fünf.");
+    log("[Warnung] QUELLEN_IDS nennt keine bekannte Quelle – nutze alle acht.");
     aktiveQuellen = QUELLEN;
   }
 }
