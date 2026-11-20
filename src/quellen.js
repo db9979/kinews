@@ -63,9 +63,7 @@ export const QUELLEN = [
     id: "zeitwelt",
     name: "Zeit Welt",
     farbe: "#d5280f",
-    // www.zeit.de liefert auf /welt/rss eine 403-Blockseite; der offizielle
-    // News-Feed von DIE ZEIT ist unter newsfeed.zeit.de erreichbar.
-    rssUrl: "https://newsfeed.zeit.de",
+    rssUrl: "https://www.zeit.de/welt/rss",
     kategorie: "weltpolitik",
     // allgemeiner News-Feed: ohne Keyword-Filter, alle Artikel zählen
     keywords: [],
@@ -75,9 +73,7 @@ export const QUELLEN = [
     id: "tagesschau-wirtschaft",
     name: "Tagesschau Wirtschaft",
     farbe: "#0053a1",
-    // Tagesschau-Seiten-Rubriken liegen unter <sektion>/index~rss2.xml
-    // (https://www.tagesschau.de/wirtschaft/rss ist eine 404-Fehlerseite).
-    rssUrl: "https://www.tagesschau.de/wirtschaft/index~rss2.xml",
+    rssUrl: "https://www.tagesschau.de/wirtschaft/rss",
     kategorie: "finanzen",
     // allgemeiner News-Feed: ohne Keyword-Filter, alle Artikel zählen
     keywords: [],
@@ -88,11 +84,7 @@ export const QUELLEN = [
     name: "Tagesschau Politik",
     farbe: "#3d74c4",
     // "Lokalpolitik (deutschlandweit)" = nationale/innere deutsche Politik.
-    // Eine Tagesschau-Rubrik "Politik" mit eigenem Feed existiert nicht
-    // (/politik/rss ist 404); der Haupt-Feed deckt die nationale
-    // Nachrichtenlage ab und enthält neben innenpolitischen auch
-    // außenpolitische Meldungen.
-    rssUrl: "https://www.tagesschau.de/index~rss2.xml",
+    rssUrl: "https://www.tagesschau.de/politik/rss",
     kategorie: "lokalpolitik",
     // allgemeiner News-Feed: ohne Keyword-Filter, alle Artikel zählen
     keywords: [],
