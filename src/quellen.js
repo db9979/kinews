@@ -63,7 +63,10 @@ export const QUELLEN = [
     id: "zeitwelt",
     name: "Zeit Welt",
     farbe: "#d5280f",
-    rssUrl: "https://www.zeit.de/welt/rss",
+    // zeit.de selbst blockt RSS-Zugriffe (403); es gibt keinen Welt-Subfeed.
+    // news/index ist der offizielle Zeit-ONLINE-Newsfeed (newsfeed.zeit.de),
+    // in dem die Welt-/Außenpolitik-Meldungen erscheinen.
+    rssUrl: "https://newsfeed.zeit.de/news/index",
     kategorie: "weltpolitik",
     // allgemeiner News-Feed: ohne Keyword-Filter, alle Artikel zählen
     keywords: [],
@@ -73,7 +76,7 @@ export const QUELLEN = [
     id: "tagesschau-wirtschaft",
     name: "Tagesschau Wirtschaft",
     farbe: "#0053a1",
-    rssUrl: "https://www.tagesschau.de/wirtschaft/rss",
+    rssUrl: "https://www.tagesschau.de/wirtschaft/index~rss2.xml",
     kategorie: "finanzen",
     // allgemeiner News-Feed: ohne Keyword-Filter, alle Artikel zählen
     keywords: [],
@@ -84,7 +87,9 @@ export const QUELLEN = [
     name: "Tagesschau Politik",
     farbe: "#3d74c4",
     // "Lokalpolitik (deutschlandweit)" = nationale/innere deutsche Politik.
-    rssUrl: "https://www.tagesschau.de/politik/rss",
+    // tagesschau.de kennt kein Ressort "Politik"; Inland ist das
+    // Ressort für die nationale/innere deutsche Politik.
+    rssUrl: "https://www.tagesschau.de/inland/index~rss2.xml",
     kategorie: "lokalpolitik",
     // allgemeiner News-Feed: ohne Keyword-Filter, alle Artikel zählen
     keywords: [],

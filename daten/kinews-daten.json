@@ -439,54 +439,64 @@
       "beschreibung": "In a lab near Newark Airport in New Jersey, a team of around 30 experienced human sniffers are slowly working their way through every odor on Earth. Their careful notes—“nutty,” “peachy,” “marine”—are cross-referenced with a chemical analysis to create a rich set of training data for what AI startup Osmo calls the world’s first foundation…",
       "bild": null,
       "kategorie": "ai"
+    },
+    {
+      "id": "99727b65c29013d05b70",
+      "url": "https://arstechnica.com/security/2026/11/a-leaky-ai-supply-chain-is-exposing-secret-user-data-at-an-alarming-rate/",
+      "titel": "Researcher plants 2m canaries into the AI supply chain. A privacy disaster surfaced.",
+      "quelle": "arstechnica",
+      "zeit": "2026-11-20T20:59:08.000Z",
+      "beschreibung": "Test using prompts with unique, trackable secrets proves that data doesn't stay private.",
+      "bild": "https://cdn.arstechnica.net/wp-content/uploads/2026/11/ai-privacy-leakage-1152x648.jpg",
+      "kategorie": "ai"
     }
   ],
   "status": {
     "theverge": {
       "ok": true,
-      "letztePruefung": "2026-11-20T20:52:58.042Z",
+      "letztePruefung": "2026-11-20T22:44:11.192Z",
       "fehler": null,
       "artikelGefunden": 2
     },
     "techcrunch": {
       "ok": true,
-      "letztePruefung": "2026-11-20T20:52:57.919Z",
+      "letztePruefung": "2026-11-20T22:44:11.209Z",
       "fehler": null,
       "artikelGefunden": 16
     },
     "arstechnica": {
       "ok": true,
-      "letztePruefung": "2026-11-20T20:52:57.964Z",
+      "letztePruefung": "2026-11-20T22:44:11.269Z",
       "fehler": null,
-      "artikelGefunden": 4
+      "artikelGefunden": 5
     },
     "venturebeat": {
       "ok": false,
-      "letztePruefung": "2026-11-20T20:52:57.946Z",
+      "letztePruefung": "2026-11-20T22:44:11.218Z",
       "fehler": "Feed-Status 429 Too Many Requests",
       "artikelGefunden": 0
     },
     "mittr": {
       "ok": true,
-      "letztePruefung": "2026-11-20T20:52:58.109Z",
+      "letztePruefung": "2026-11-20T22:44:11.245Z",
       "fehler": null,
       "artikelGefunden": 5
     },
     "zeitwelt": {
       "ok": false,
-      "letztePruefung": "2026-11-20T20:52:58.106Z",
+      "letztePruefung": "2026-11-20T22:44:11.282Z",
       "fehler": "Feed-Status 403",
       "artikelGefunden": 0
     },
     "tagesschau-wirtschaft": {
       "ok": false,
-      "letztePruefung": "2026-11-20T20:52:58.093Z",
+      "letztePruefung": "2026-11-20T22:44:11.346Z",
       "fehler": "Feed-Status 404 Not Found",
       "artikelGefunden": 0
     },
     "tagesschau-politik": {
       "ok": false,
-      "letztePruefung": "2026-11-20T20:52:58.093Z",
+      "letztePruefung": "2026-11-20T22:44:11.417Z",
       "fehler": "Feed-Status 404 Not Found",
       "artikelGefunden": 0
     }
