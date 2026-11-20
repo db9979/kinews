@@ -174,49 +174,49 @@
   "status": {
     "theverge": {
       "ok": true,
-      "letztePruefung": "2026-11-20T20:21:05.242Z",
+      "letztePruefung": "2026-11-20T20:27:02.819Z",
       "fehler": null,
       "artikelGefunden": 3
     },
     "techcrunch": {
       "ok": true,
-      "letztePruefung": "2026-11-20T20:21:05.243Z",
+      "letztePruefung": "2026-11-20T20:27:02.819Z",
       "fehler": null,
       "artikelGefunden": 3
     },
     "arstechnica": {
       "ok": true,
-      "letztePruefung": "2026-11-20T20:21:05.243Z",
+      "letztePruefung": "2026-11-20T20:27:02.819Z",
       "fehler": null,
       "artikelGefunden": 3
     },
     "venturebeat": {
       "ok": true,
-      "letztePruefung": "2026-11-20T20:21:05.243Z",
+      "letztePruefung": "2026-11-20T20:27:02.819Z",
       "fehler": null,
       "artikelGefunden": 3
     },
     "mittr": {
       "ok": true,
-      "letztePruefung": "2026-11-20T20:21:05.243Z",
+      "letztePruefung": "2026-11-20T20:27:02.819Z",
       "fehler": null,
       "artikelGefunden": 3
     },
     "zeitwelt": {
       "ok": true,
-      "letztePruefung": "2026-11-20T20:21:05.243Z",
+      "letztePruefung": "2026-11-20T20:27:02.819Z",
       "fehler": null,
       "artikelGefunden": 3
     },
     "tagesschau-wirtschaft": {
       "ok": true,
-      "letztePruefung": "2026-11-20T20:21:05.243Z",
+      "letztePruefung": "2026-11-20T20:27:02.820Z",
       "fehler": null,
       "artikelGefunden": 3
     },
     "tagesschau-politik": {
       "ok": true,
-      "letztePruefung": "2026-11-20T20:21:05.243Z",
+      "letztePruefung": "2026-11-20T20:27:02.820Z",
       "fehler": null,
       "artikelGefunden": 3
     }

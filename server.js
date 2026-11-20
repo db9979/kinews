@@ -76,7 +76,7 @@ app.get("/api/nachrichten", (req, res) => {
   res.json({ artikel: liste, anzahl: liste.length });
 });
 
-/** Die fünf konfigurierten Quellen. */
+/** Die acht konfigurierten Quellen. */
 app.get("/api/quellen", (req, res) => {
   res.json({
     quellens: aktiveQuellen.map(({ id, name, farbe, intervall }) => ({
