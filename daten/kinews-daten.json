@@ -454,51 +454,51 @@
   "status": {
     "theverge": {
       "ok": true,
-      "letztePruefung": "2026-11-20T22:44:11.192Z",
+      "letztePruefung": "2026-11-21T06:40:23.366Z",
       "fehler": null,
-      "artikelGefunden": 2
+      "artikelGefunden": 3
     },
     "techcrunch": {
       "ok": true,
-      "letztePruefung": "2026-11-20T22:44:11.209Z",
+      "letztePruefung": "2026-11-21T06:40:23.366Z",
       "fehler": null,
-      "artikelGefunden": 16
+      "artikelGefunden": 3
     },
     "arstechnica": {
       "ok": true,
-      "letztePruefung": "2026-11-20T22:44:11.269Z",
+      "letztePruefung": "2026-11-21T06:40:23.367Z",
       "fehler": null,
-      "artikelGefunden": 5
+      "artikelGefunden": 3
     },
     "venturebeat": {
-      "ok": false,
-      "letztePruefung": "2026-11-20T22:44:11.218Z",
-      "fehler": "Feed-Status 429 Too Many Requests",
-      "artikelGefunden": 0
+      "ok": true,
+      "letztePruefung": "2026-11-21T06:40:23.367Z",
+      "fehler": null,
+      "artikelGefunden": 3
     },
     "mittr": {
       "ok": true,
-      "letztePruefung": "2026-11-20T22:44:11.245Z",
+      "letztePruefung": "2026-11-21T06:40:23.367Z",
       "fehler": null,
-      "artikelGefunden": 5
+      "artikelGefunden": 3
     },
     "zeitwelt": {
-      "ok": false,
-      "letztePruefung": "2026-11-20T22:44:11.282Z",
-      "fehler": "Feed-Status 403",
-      "artikelGefunden": 0
+      "ok": true,
+      "letztePruefung": "2026-11-21T06:40:23.367Z",
+      "fehler": null,
+      "artikelGefunden": 3
     },
     "tagesschau-wirtschaft": {
-      "ok": false,
-      "letztePruefung": "2026-11-20T22:44:11.346Z",
-      "fehler": "Feed-Status 404 Not Found",
-      "artikelGefunden": 0
+      "ok": true,
+      "letztePruefung": "2026-11-21T06:40:23.367Z",
+      "fehler": null,
+      "artikelGefunden": 3
     },
     "tagesschau-politik": {
-      "ok": false,
-      "letztePruefung": "2026-11-20T22:44:11.417Z",
-      "fehler": "Feed-Status 404 Not Found",
-      "artikelGefunden": 0
+      "ok": true,
+      "letztePruefung": "2026-11-21T06:40:23.367Z",
+      "fehler": null,
+      "artikelGefunden": 3
     }
   }
 }
